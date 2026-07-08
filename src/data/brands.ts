@@ -1,0 +1,16 @@
+export const brands = [
+  "ESAB",
+  "GYS",
+  "OTC",
+  "Hypertherm",
+  "AMG",
+  "Aotai",
+  "Kjellberg",
+  "MOSA",
+  "Shindaiwa",
+  "Weldflame",
+  "Wilson",
+  "Hgstar",
+  "IKING",
+  "Exact",
+];

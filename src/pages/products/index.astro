@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import CategoryCards from "../../components/CategoryCards.astro";
+import { categories } from "../../data/categories";
+---
+
+<BaseLayout
+  title="Products — Center Industrial Supply Corporation"
+  description="Browse welding equipment, cutting machines, consumables, robotics, PPE, and automation solutions from Center Industrial Supply."
+>
+  <PageHeader
+    title="Products"
+    breadcrumb='<a href="/">Home</a> / Products'
+    subtitle="Welding equipment, consumables, automation, and safety products for every application."
+  />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      <CategoryCards categories={categories} />
+      <p style="text-align:center;margin-top:2.5rem">
+        <a class="cisc-btn cisc-btn--primary" href="/all-products/">View Full Product Catalog</a>
+      </p>
+    </div>
+  </main>
+</BaseLayout>

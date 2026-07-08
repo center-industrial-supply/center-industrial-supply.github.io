@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { getProducts } from "../../lib/products";
+
+const products = getProducts();
+---
+
+<BaseLayout
+  title="All Products — Center Industrial Supply Corporation"
+  description="Full product catalog of welding and cutting equipment from Center Industrial Supply Corporation."
+>
+  <PageHeader
+    title="All Products"
+    breadcrumb='<a href="/">Home</a> / All Products'
+    subtitle={`${products.length} products recovered from archive`}
+  />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      <div class="cisc-product-grid">
+        {
+          products.map((product) => (
+            <a class="cisc-product-card" href={product.href}>
+              <div class="cisc-product-card__img">
+                <img
+                  src={`/${product.image}`}
+                  alt={product.name}
+                  loading="lazy"
+                  width="300"
+                  height="300"
+                />
+              </div>
+              <div class="cisc-product-card__body">
+                {product.brand && <div class="cisc-product-card__brand">{product.brand}</div>}
+                <h3>{product.name}</h3>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+interface Props {
+  title: string;
+  breadcrumb?: string;
+  subtitle?: string;
+}
+
+const { title, breadcrumb, subtitle } = Astro.props;
+---
+
+<header class="cisc-page-header">
+  <div class="cisc-container">
+    {breadcrumb && <div class="cisc-breadcrumb" set:html={breadcrumb} />}
+    <h1>{title}</h1>
+    {subtitle && <p style="opacity:.9;margin:0">{subtitle}</p>}
+  </div>
+</header>

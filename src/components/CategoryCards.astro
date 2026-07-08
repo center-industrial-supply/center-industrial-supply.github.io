@@ -1,0 +1,26 @@
+---
+import type { Category } from "../data/categories";
+
+interface Props {
+  categories: Category[];
+}
+
+const { categories } = Astro.props;
+---
+
+<div class="cisc-categories">
+  {
+    categories.map((category) => (
+      <a class="cisc-category-card" href={category.href}>
+        <div class="cisc-category-card__icon" aria-hidden="true">
+          {category.icon}
+        </div>
+        <h3>{category.name}</h3>
+        <p>{category.description}</p>
+        {category.count && (
+          <span class="cisc-category-card__count">{category.count} products</span>
+        )}
+      </a>
+    ))
+  }
+</div>
