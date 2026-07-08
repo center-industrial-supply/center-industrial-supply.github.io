@@ -1,0 +1,130 @@
+/* Overlay new layout on recovered Wayback HTML pages */
+body.cisc-legacy > .site,
+body.cisc-legacy > .site-footer,
+body.cisc-legacy .pum-overlay,
+body.cisc-legacy #jp-carousel-loading-overlay,
+body.cisc-legacy .jp-carousel-overlay,
+body.cisc-legacy .fb-customerchat,
+body.cisc-legacy .scrollup {
+  display: none !important;
+}
+
+body.cisc-legacy {
+  padding-top: 0 !important;
+}
+
+.cisc-legacy-content {
+  padding: 2.5rem 0 4rem;
+}
+
+.cisc-legacy-content .container {
+  width: min(100% - 2rem, 1200px);
+  margin-inline: auto;
+}
+
+/* Restyle surviving WooCommerce product grids */
+.cisc-legacy-content .products {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cisc-legacy-content .products li.product {
+  float: none !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #fff;
+  border: 1px solid #d8dde2;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.cisc-legacy-content .products li.product:hover {
+  box-shadow: 0 8px 24px rgba(2, 43, 51, 0.12);
+  transform: translateY(-2px);
+}
+
+.cisc-legacy-content .product-title,
+.cisc-legacy-content .products h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.95rem !important;
+  padding: 0 1rem 1rem;
+  margin: 0;
+}
+
+.cisc-legacy-content .product-header img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.cisc-legacy-content .page-header {
+  display: none;
+}
+
+.cisc-legacy-content .breadcrumb {
+  display: none;
+}
+
+.cisc-legacy-content .sidebar {
+  background: #eaedf0;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cisc-legacy-content .page-content {
+  width: 100%;
+}
+
+.cisc-legacy-content .row {
+  display: block;
+}
+
+.cisc-legacy-content .col-md-3,
+.cisc-legacy-content .col-md-9 {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 900px) {
+  .cisc-legacy-content .row {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
+  }
+}
+
+.cisc-legacy-content .woocommerce-result-count,
+.cisc-legacy-content .woocommerce-ordering {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.cisc-legacy-content .product-brand-container span {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #046e8c;
+  padding: 0.5rem 1rem 0;
+}
+
+/* Single product pages */
+.cisc-legacy-content .product-top-meta h1,
+.cisc-legacy-content .entry-title {
+  font-family: "Montserrat", sans-serif;
+  color: #022b33;
+  font-size: 1.75rem;
+}
+
+.cisc-legacy-content .woocommerce-product-gallery img {
+  border-radius: 6px;
+}

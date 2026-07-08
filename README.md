@@ -4,6 +4,16 @@ Static rebuild of [centerindustrial.com](https://centerindustrial.com) from the 
 
 Live site: https://center-industrial-supply.github.io
 
+## Site layout
+
+The main pages (home, about, products, catalog, support, contact) use a new static layout in `assets/`. Archived product and category pages are wrapped with the same header/footer via `assets/js/layout.js`.
+
+Rebuild pages after editing layout sources:
+
+```bash
+python3 scripts/build-layout.py
+```
+
 ## Recovery scripts
 
 ```bash
