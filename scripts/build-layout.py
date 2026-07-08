@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generate shared page shell and enhance legacy Wayback HTML pages."""
+"""DEPRECATED: Use Astro build instead (npm run build).
+
+This script is kept for reference. Main pages are now Astro components in src/pages/.
+Legacy archive pages in public/ use layout.js for header/footer injection.
+"""
 
 from __future__ import annotations
 

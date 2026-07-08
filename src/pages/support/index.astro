@@ -1,0 +1,45 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+---
+
+<BaseLayout
+  title="Support — Center Industrial Supply Corporation"
+  description="Technology Center, demonstrations, training, and after-sales service for welding and cutting equipment in the Philippines."
+>
+  <PageHeader title="Support &amp; Service" breadcrumb='<a href="/">Home</a> / Support' />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      <div class="cisc-support-grid">
+        <div class="cisc-support-card">
+          <h3>Technology Center</h3>
+          <p>
+            Our Technology Center in Filinvest Technology Park, Calamba, Laguna combines demo,
+            process development, and training under one roof. Experience our innovative welding and
+            cutting solutions first-hand.
+          </p>
+        </div>
+        <div class="cisc-support-card">
+          <h3>Service &amp; Repair</h3>
+          <p>
+            We view our customers as partners and put high value on timely, reliable, after-sales
+            service support. Our service team is always available to help keep your equipment
+            running.
+          </p>
+        </div>
+        <div class="cisc-support-card">
+          <h3>Demonstrations</h3>
+          <p>
+            We showcase the latest manual and automated welding and cutting technology — helping
+            customers achieve increased productivity and improved quality.
+          </p>
+        </div>
+      </div>
+      <div class="cisc-cta" style="margin-top:3rem;border-radius:6px">
+        <h2>Schedule a Demo or Service Visit</h2>
+        <p>Contact our team to arrange equipment demonstrations, technical consultations, or service support.</p>
+        <a class="cisc-btn cisc-btn--outline" href="/contact-us/">Contact Support</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

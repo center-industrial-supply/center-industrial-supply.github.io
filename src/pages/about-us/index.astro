@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+---
+
+<BaseLayout
+  title="About Us — Center Industrial Supply Corporation"
+  description="Learn about Center Industrial Supply Corporation — a leading welding and cutting distributor serving Philippine industries since 1957."
+>
+  <PageHeader title="About Us" breadcrumb='<a href="/">Home</a> / About Us' />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      <div class="cisc-split" style="margin-bottom:3rem">
+        <div class="cisc-prose">
+          <h2>Introduction</h2>
+          <p>
+            Center Industrial Supply Corporation is a leading welding and cutting products
+            distributor in the Philippines. Representing global brands who are leaders in process
+            development and advanced technology, we pride ourselves with being not only a supplier
+            but primarily a solutions provider to Philippine industries for over six decades now.
+          </p>
+          <p>
+            Behind our success and reputation is our commitment to integrity, innovative technology,
+            process expertise, customer focus, and outstanding service and technical support.
+          </p>
+          <p>
+            Our product range includes welding and cutting equipment, consumables and accessories for
+            practically all welding and cutting processes. Equipment in our line range from simple yet
+            high-performance manual equipment, to the more advanced digital-based machines, to
+            fully-automated systems and robotics.
+          </p>
+          <p>
+            Our products provide solutions in a wide range of applications and industries: sheet metal
+            fabrication, heavy steel fabrication, automotive, shipbuilding, offshore oil and gas,
+            boiler, construction, cement, mining, sugar and many more.
+          </p>
+        </div>
+        <div class="cisc-split__image">
+          <img
+            src="/wp-content/uploads/2020/10/cisc-logo-full.png"
+            alt="Center Industrial Supply Corporation"
+            width="500"
+            height="120"
+            style="object-fit:contain;background:#eaedf0;padding:2rem"
+          />
+        </div>
+      </div>
+
+      <h2>Our History</h2>
+      <div class="cisc-timeline">
+        <div class="cisc-timeline__item">
+          <div class="cisc-timeline__year">1957</div>
+          <p>
+            Founder Mr. Doy Ting opens Center Construction Supply along Azcarraga Street (now Claro
+            M. Recto Avenue) in Sta. Cruz, Manila — beginning our journey in welding and industrial
+            supply.
+          </p>
+        </div>
+        <div class="cisc-timeline__item">
+          <div class="cisc-timeline__year">Growth</div>
+          <p>
+            The company expands its product portfolio and representation of international welding
+            brands, establishing a reputation for technical expertise across Philippine industries.
+          </p>
+        </div>
+        <div class="cisc-timeline__item">
+          <div class="cisc-timeline__year">Today</div>
+          <p>
+            Headquartered in Quezon City with a Technology Center in Calamba, Laguna, CISC continues
+            to deliver welding, cutting, and automation solutions backed by demonstration, training,
+            and after-sales service.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

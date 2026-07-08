@@ -1,44 +1,15 @@
 (function () {
   "use strict";
 
-  var SITE_ROOT = (function () {
-    var parts = window.location.pathname.split("/").filter(Boolean);
-    if (parts.length && parts[parts.length - 1] === "index.html") {
-      parts.pop();
-    }
-    return "/" + parts.join("/") + (parts.length ? "/" : "");
-  })();
-
-  function rootPrefix() {
-    var depth = window.location.pathname.split("/").filter(Boolean).length;
-    if (window.location.pathname.endsWith("index.html")) {
-      depth -= 1;
-    }
-  /* For github.io root site, absolute paths from / work */
-    return "/";
-  }
-
-  function prefixToRoot() {
-    var segments = window.location.pathname.split("/").filter(function (s) {
-      return s && s !== "index.html";
-    });
-    if (!segments.length) return "./";
-    return segments.map(function () { return ".."; }).join("/") + "/";
-  }
-
   function loadPartial(name, targetId) {
-    var prefix = prefixToRoot();
-    var url = prefix + "assets/partials/" + name + ".html";
-    return fetch(url)
+    return fetch("/assets/partials/" + name + ".html")
       .then(function (res) {
-        if (!res.ok) throw new Error("Failed to load " + url);
+        if (!res.ok) throw new Error("Failed to load partial: " + name);
         return res.text();
       })
       .then(function (html) {
         var el = document.getElementById(targetId);
-        if (el) {
-          el.innerHTML = html.replace(/\{\{PREFIX\}\}/g, prefix);
-        }
+        if (el) el.innerHTML = html;
       });
   }
 
@@ -66,7 +37,7 @@
 
     Promise.all([
       loadPartial("header", "cisc-header-mount"),
-      loadPartial("footer", "cisc-footer-mount")
+      loadPartial("footer", "cisc-footer-mount"),
     ])
       .then(function () {
         wrapLegacyMain();
@@ -74,7 +45,7 @@
           window.CISC.initSite();
         } else {
           var script = document.createElement("script");
-          script.src = prefixToRoot() + "assets/js/site.js";
+          script.src = "/assets/js/site.js";
           document.body.appendChild(script);
         }
       })

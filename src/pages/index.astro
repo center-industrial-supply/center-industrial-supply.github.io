@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CategoryCards from "../components/CategoryCards.astro";
+import { categories } from "../data/categories";
+import { brands } from "../data/brands";
+---
+
+<BaseLayout
+  title="Center Industrial Supply Corporation — Welding & Cutting Equipment"
+  description="Philippines' leading distributor of welding and cutting equipment, consumables, automation, and robotic systems since 1957."
+>
+  <main>
+    <section class="cisc-hero">
+      <div class="cisc-hero__bg" aria-hidden="true"></div>
+      <div class="cisc-hero__grid" aria-hidden="true"></div>
+      <div class="cisc-container cisc-hero__content">
+        <span class="cisc-hero__eyebrow">Since 1957</span>
+        <h1>Welding &amp; Cutting Solutions for Philippine Industry</h1>
+        <p class="cisc-hero__lead">
+          Center Industrial Supply Corporation distributes world-class welding equipment,
+          consumables, and automation systems — backed by technical expertise and service you can
+          count on.
+        </p>
+        <div class="cisc-hero__actions">
+          <a class="cisc-btn cisc-btn--primary" href="/products/">Browse Products</a>
+          <a class="cisc-btn cisc-btn--outline" href="/contact-us/">Request a Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cisc-stats">
+      <div class="cisc-container cisc-stats__grid">
+        <div>
+          <div class="cisc-stat__number">65+</div>
+          <div class="cisc-stat__label">Years of Service</div>
+        </div>
+        <div>
+          <div class="cisc-stat__number">150+</div>
+          <div class="cisc-stat__label">Products in Catalog</div>
+        </div>
+        <div>
+          <div class="cisc-stat__number">20+</div>
+          <div class="cisc-stat__label">Global Brands</div>
+        </div>
+        <div>
+          <div class="cisc-stat__number">1</div>
+          <div class="cisc-stat__label">Technology Center</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cisc-section">
+      <div class="cisc-container">
+        <div class="cisc-section__header">
+          <div class="cisc-section__eyebrow">Product Categories</div>
+          <h2>Equipment for Every Welding &amp; Cutting Process</h2>
+          <p>
+            From manual welding to fully automated robotic systems — find the right solution for
+            your application.
+          </p>
+        </div>
+        <CategoryCards categories={categories} />
+      </div>
+    </section>
+
+    <section class="cisc-section cisc-section--alt">
+      <div class="cisc-container">
+        <div class="cisc-split">
+          <div>
+            <div class="cisc-section__eyebrow">About CISC</div>
+            <h2>More Than a Supplier — A Solutions Partner</h2>
+            <p>
+              We represent global brands who are leaders in process development and advanced
+              technology. Our commitment to integrity, innovative technology, and outstanding
+              technical support has made us a trusted name in Philippine industry for over six
+              decades.
+            </p>
+            <p>
+              Our product range covers practically all welding and cutting processes — from
+              high-performance manual equipment to advanced digital machines and fully-automated
+              robotics.
+            </p>
+            <a class="cisc-btn cisc-btn--dark" href="/about-us/">Our Story</a>
+          </div>
+          <div class="cisc-split__image">
+            <img
+              src="/wp-content/uploads/2020/10/secondary-guy-industrial.jpg"
+              alt="Welding professional at work"
+              width="600"
+              height="360"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cisc-section">
+      <div class="cisc-container">
+        <div class="cisc-section__header">
+          <div class="cisc-section__eyebrow">Authorized Brands</div>
+          <h2>World-Class Manufacturers</h2>
+          <p>
+            We partner with industry-leading brands to bring you proven technology and reliable
+            performance.
+          </p>
+        </div>
+        <div class="cisc-brands">
+          {brands.map((brand) => <span class="cisc-brand">{brand}</span>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="cisc-section cisc-section--alt">
+      <div class="cisc-container">
+        <div class="cisc-section__header">
+          <div class="cisc-section__eyebrow">Why Choose Us</div>
+          <h2>Built on Service &amp; Expertise</h2>
+        </div>
+        <div class="cisc-features">
+          <div class="cisc-feature">
+            <div class="cisc-feature__icon" aria-hidden="true">🎯</div>
+            <h3>Process Expertise</h3>
+            <p>
+              Decades of application knowledge across shipbuilding, fabrication, automotive, oil
+              &amp; gas, and more.
+            </p>
+          </div>
+          <div class="cisc-feature">
+            <div class="cisc-feature__icon" aria-hidden="true">🏭</div>
+            <h3>Technology Center</h3>
+            <p>
+              Demo, training, and process development facility in Filinvest Technology Park,
+              Calamba, Laguna.
+            </p>
+          </div>
+          <div class="cisc-feature">
+            <div class="cisc-feature__icon" aria-hidden="true">🛠</div>
+            <h3>After-Sales Support</h3>
+            <p>
+              Timely, reliable service and technical support — because we view every customer as a
+              long-term partner.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cisc-cta">
+      <div class="cisc-container">
+        <h2>Need Help Choosing Equipment?</h2>
+        <p>Our technical team can recommend the right welding or cutting solution for your application.</p>
+        <a class="cisc-btn cisc-btn--outline" href="/contact-us/">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
