@@ -13,9 +13,7 @@ Usage:
 from __future__ import annotations
 
 import os
-import re
 import sys
-from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
@@ -32,11 +30,20 @@ def _is_live_site_url(url: str) -> bool:
 
 
 def _patch_skip_live_fallback() -> None:
-    """Prevent wayback-archive from hitting the dead live site."""
+    """Prevent wayback-archive from hitting or logging attempts against the dead live site."""
     if not SKIP_LIVE_FALLBACK:
         return
 
+    import builtins
+
+    real_print = builtins.print
     original_get = requests.Session.get
+
+    def filtered_print(*args, **kwargs):
+        msg = str(args[0]) if args else ""
+        if "trying original URL" in msg or "Downloaded from original URL" in msg:
+            return
+        return real_print(*args, **kwargs)
 
     def patched_get(self, url, *args, **kwargs):
         if _is_live_site_url(url):
@@ -45,31 +52,57 @@ def _patch_skip_live_fallback() -> None:
             )
         return original_get(self, url, *args, **kwargs)
 
+    builtins.print = filtered_print
     requests.Session.get = patched_get
 
 
-def _fix_trailing_slash_paths(output_dir: Path) -> int:
-    """Fix wayback-archive bug: trailing-slash URLs overwrite index.html."""
-    fixed = 0
-    for html_file in output_dir.rglob("index.html"):
-        parent = html_file.parent
-        if parent == output_dir:
-            continue
-        # If parent dir name looks like a path segment, ensure it's a directory
-        rel = parent.relative_to(output_dir)
-        if not rel.parts:
-            continue
-        # Check if a sibling file stole this path (flat file named after dir)
-        segment = rel.parts[-1]
-        flat_file = parent.parent / f"{segment}.html"
-        if flat_file.exists() and flat_file != html_file:
-            # Move flat file into proper directory
-            target = parent / "index.html"
-            if not target.exists() or target.stat().st_size < flat_file.stat().st_size:
-                target.parent.mkdir(parents=True, exist_ok=True)
-                flat_file.rename(target)
-                fixed += 1
-    return fixed
+def _patch_trailing_slash_path_bug() -> None:
+    """Fix wayback-archive bug: /about-us/ overwrites root index.html."""
+    original_get_local_path = WaybackDownloader._get_local_path
+
+    def patched_get_local_path(self, url: str):
+        from urllib.parse import urlparse, unquote
+        import os
+        from pathlib import Path
+
+        parsed = urlparse(url)
+
+        if "fonts.googleapis.com" in parsed.netloc or "fonts.gstatic.com" in parsed.netloc:
+            return original_get_local_path(self, url)
+        if self._is_squarespace_cdn(url):
+            return original_get_local_path(self, url)
+
+        path = unquote(parsed.path)
+        while path.startswith("/"):
+            path = path[1:]
+        while "//" in path:
+            path = path.replace("//", "/")
+
+        # Fixed: preserve directory structure for trailing-slash URLs
+        if not path:
+            path = "index.html"
+        elif path.endswith("/"):
+            path = path.rstrip("/") + "/index.html"
+
+        known_asset_extensions = {
+            ".css", ".js", ".jpg", ".jpeg", ".png", ".gif", ".svg", ".webp",
+            ".ico", ".woff", ".woff2", ".ttf", ".eot", ".otf", ".pdf", ".zip",
+            ".mp4", ".mp3", ".avi", ".mov", ".wmv", ".flv", ".doc", ".docx",
+        }
+        has_extension = "." in os.path.basename(path)
+        is_asset = has_extension and os.path.splitext(path)[1].lower() in known_asset_extensions
+
+        if not has_extension and not is_asset:
+            dir_part = os.path.dirname(path) if os.path.dirname(path) else ""
+            base_part = os.path.basename(path) if os.path.basename(path) else "index"
+            if dir_part:
+                path = os.path.join(dir_part, base_part + ".html")
+            else:
+                path = base_part + ".html"
+
+        return Path(self.config.output_dir) / path
+
+    WaybackDownloader._get_local_path = patched_get_local_path
 
 
 def main() -> int:
@@ -82,6 +115,7 @@ def main() -> int:
         return 1
 
     _patch_skip_live_fallback()
+    _patch_trailing_slash_path_bug()
     if SKIP_LIVE_FALLBACK:
         print("Live-site fallback: DISABLED (centerindustrial.com is down)", flush=True)
 
@@ -94,11 +128,6 @@ def main() -> int:
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr, flush=True)
         return 1
-
-    output_dir = Path(config.output_dir)
-    fixed = _fix_trailing_slash_paths(output_dir)
-    if fixed:
-        print(f"Fixed {fixed} trailing-slash path(s)", flush=True)
 
     return 0
 
