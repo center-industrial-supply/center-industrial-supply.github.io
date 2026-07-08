@@ -51,6 +51,13 @@
     wrap.className = "cisc-legacy-content";
     siteMain.parentNode.insertBefore(wrap, siteMain);
     wrap.appendChild(siteMain);
+
+    // Keep legacy content outside `.site` so legacy.css can hide the old shell
+    // without hiding the recovered product/category markup.
+    var site = document.querySelector("body.cisc-legacy > .site");
+    if (site && wrap.parentNode === site) {
+      site.parentNode.insertBefore(wrap, site.nextSibling);
+    }
   }
 
   document.addEventListener("DOMContentLoaded", function () {
