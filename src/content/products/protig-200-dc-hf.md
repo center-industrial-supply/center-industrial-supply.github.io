@@ -1,0 +1,12 @@
+---
+title: "PROTIG 200 DC HF"
+slug: "protig-200-dc-hf"
+layout: product
+description: "DOWNLOAD PRODUCT BROCHURE HERE The PROTIG 200 DC (200 A) ensures high-quality welds on both mild and stainless steels thanks to its advanced secondary control system. Its intuitive interface makes it incredibly simple to adjust the welding settings."
+brand: "GYS"
+images:
+- "/wp-content/uploads/2023/02/GYS-PROTIG-200-DC-HF.jpg"
+- "/wp-content/uploads/2023/02/GYS-PROTIG-200-DC-02-1.jpg"
+---
+
+<p>The PROTIG 200 DC (200 A) ensures high-quality welds on both mild and stainless steels thanks to its advanced secondary control system. Its intuitive interface makes it incredibly simple to adjust the welding settings.<p><strong>Improved DC Welding</strong><ul><li>Secondary control system: ensuring excellent arc stability and a constant current in any welding position.<li>DC TIG: for quality welding on all ferrous materials such as steel, stainless steel and copper as well as its alloys.<li>Pulsed DC TIG: controls the temperature of the weld pool, reduces deformation and allows thin metal sheets from 0.3 mm thick to be assembled.<li>SPOT: fast and precise spot-welding before joining thin sheets.<li>Two ignition systems: contactless HF ignition and Arc-Lift ignition for electro-sensitive environments.<li>Three trigger controls: 2T, 4T and 4T LOG.<li>Automatic torch detection: compatible with grip-handle and double-button torches.</ul><p><strong>MMA Welding</strong><ul><li>MMA welding: basic and rutile electrodes (up to Ø 5 mm).<li>Pulsed MMA welding: enables vertical-up welding for pipeline work.<li>Three built-in welding support technologies:<br> – Anti-Sticking technology: reduces the risk of the electrode sticking to the workpiece.<br> – Hot Start: makes ignition easier and can be adjusted for different metals in seconds.<br> – Arc Force: a one-off current boost for difficult welding tasks.</ul><p><strong>Intuitive</strong><ul><li>Current and voltage displayed during and after the welding process (DMOS/QMOS).<li>Stores up to 10 programs per welding process for perfectly consistent welds.<li>Advanced ventilation management system reduces power consumption, dust extraction and noise.</ul><p><strong>Resilient</strong><ul><li>Reinforced casing and anti-shock pads on all sides.<li>Compact and easy to move around the worksite.<li>Protected against overvoltage up to 400 V (PROTEC 400 technology).</ul>

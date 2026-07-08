@@ -1,0 +1,25 @@
+---
+title: "DWT"
+slug: "tube-and-pipe-cutting-and-welding-solutions/o-d-mount-pipe-beveling-machines/dwt-o-d-mount-pipe-beveling-machines"
+layout: category
+parent: "tube-and-pipe-cutting-and-welding-solutions/o-d-mount-pipe-beveling-machines"
+products:
+  - slug: "pipe-beveler-mf3-r"
+    title: "Pipe Beveler Mf3 R"
+    image: "/wp-content/uploads/2020/10/MF3-R.png"
+  - slug: "pipe-beveler-mf4-r"
+    title: "Pipe Beveler Mf4 R"
+    image: "/wp-content/uploads/2020/10/MF4-R.png"
+  - slug: "pipe-beveler-mf2-25"
+    title: "Pipe Beveler Mf2 25"
+    image: "/wp-content/uploads/2020/10/MF2-25.png"
+  - slug: "pipe-beveler-mf3-25"
+    title: "Pipe Beveler Mf3 25"
+    image: "/wp-content/uploads/2020/10/MF3-25.png"
+  - slug: "pipe-beveler-mf4"
+    title: "Pipe Beveler Mf4"
+    image: "/wp-content/uploads/2020/10/MF4.png"
+  - slug: "pipe-beveler-mf3-25xl"
+    title: "Pipe Beveler Mf3 25Xl"
+    image: "/wp-content/uploads/2020/10/MF3-25XL.png"
+---

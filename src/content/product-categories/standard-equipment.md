@@ -1,0 +1,25 @@
+---
+title: "Standard Equipment"
+slug: "standard-equipment"
+layout: category
+description: "Manual Gas Apparatus, MMA, MIG/MAG, TIG, Multi-Process, Plasma Cutting Machines"
+subcategories:
+  - slug: "gas-welding-and-cutting-apparatus"
+    title: "Gas Welding and Cutting Apparatus"
+    image: "/wp-content/uploads/2020/10/Gas-Welding-_-Cutting.jpg"
+  - slug: "mig-mag-welding-equipment"
+    title: "MIG/MAG Welding Equipment"
+    image: "/wp-content/uploads/2020/10/MIG_MAG-Welding-300x300.jpg"
+  - slug: "mma-welding-equipment"
+    title: "MMA Welding Equipment"
+    image: "/wp-content/uploads/2020/10/MMA-Welding-300x300.jpg"
+  - slug: "multi-process-welding"
+    title: "Multi-Process Welding Equipment"
+    image: "/wp-content/uploads/2021/02/multi-process-category.png"
+  - slug: "plasma-arc-cutting-equipment"
+    title: "Plasma Arc Cutting Equipment"
+    image: "/wp-content/uploads/2020/10/Plasma-Cutting.png"
+  - slug: "tig-welding-equipment"
+    title: "Tig Welding Equipment"
+    image: "/wp-content/uploads/2020/10/TIG-Welding-1.jpg"
+---

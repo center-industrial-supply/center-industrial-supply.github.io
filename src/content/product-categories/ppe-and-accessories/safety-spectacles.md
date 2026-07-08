@@ -1,0 +1,26 @@
+---
+title: "Safety Spectacles"
+slug: "ppe-and-accessories/safety-spectacles"
+layout: category
+description: "Safety spectacles protects the eyes from the dangers of different hazards such as chemicals, UV rays, bright light from welding and grinding, and many more."
+parent: "ppe-and-accessories"
+products:
+  - slug: "eco-amber-spectacles"
+    title: "Eco Amber Spectacles"
+    image: "/wp-content/uploads/2023/07/eyeglasses-yellow-eco-amber-esab.jpg"
+  - slug: "esab-eye-wear-eco-clear-spectacles"
+    title: "Esab Eye Wear Eco Clear Spectacles"
+    image: "/wp-content/uploads/2023/07/ESAB-ECO-Clear.png"
+  - slug: "warrior-amber-spectacles"
+    title: "Warrior Amber Spectacles"
+    image: "/wp-content/uploads/2023/06/safety-spectacles-warrior-esab-spec-amber.jpg"
+  - slug: "warrior-clear-spectacles"
+    title: "Warrior Clear Spectacles"
+    image: "/wp-content/uploads/2023/06/Untitled-design-17.png"
+  - slug: "warrior-shade-5-spectacles"
+    title: "Warrior Shade 5 Spectacles"
+    image: "/wp-content/uploads/2023/06/warrior-5.jpg"
+  - slug: "warrior-spectacles"
+    title: "Warrior Spectacles"
+    image: "/wp-content/uploads/2023/06/4152-1540990618-0.jpg"
+---

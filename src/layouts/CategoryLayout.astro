@@ -1,0 +1,108 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+interface CategoryItem {
+  slug: string;
+  title: string;
+  image?: string;
+}
+
+interface Breadcrumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  slug: string;
+  description?: string;
+  subcategories?: CategoryItem[];
+  products?: CategoryItem[];
+  breadcrumb?: Breadcrumb[];
+}
+
+const { title, slug, description, subcategories = [], products = [], breadcrumb = [] } = Astro.props;
+
+const pageDescription =
+  description ?? `Browse ${title} from Center Industrial Supply Corporation.`;
+
+const breadcrumbHtml = breadcrumb.length
+  ? breadcrumb
+      .map((crumb, index) => {
+        if (crumb.href && index < breadcrumb.length - 1) {
+          return `<a href="${crumb.href}">${crumb.label}</a>`;
+        }
+        return crumb.label;
+      })
+      .join(" / ")
+  : `<a href="/">Home</a> / <a href="/products/">Products</a> / ${title}`;
+
+const categoryBase = `/product-category/${slug}`;
+---
+
+<BaseLayout title={`${title} — Center Industrial Supply Corporation`} description={pageDescription}>
+  <PageHeader title={title} breadcrumb={breadcrumbHtml} subtitle={description} />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      {
+        subcategories.length > 0 && (
+          <section class="cisc-category-section">
+            <h2 class="cisc-category-section__title">Subcategories</h2>
+            <div class="cisc-product-grid">
+              {subcategories.map((item) => (
+                <a class="cisc-product-card" href={`${categoryBase}/${item.slug}/`}>
+                  <div class="cisc-product-card__img">
+                    <img
+                      src={item.image ?? "/wp-content/uploads/woocommerce-placeholder.png"}
+                      alt={item.title}
+                      loading="lazy"
+                      width="300"
+                      height="300"
+                    />
+                  </div>
+                  <div class="cisc-product-card__body">
+                    <h3>{item.title}</h3>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+      {
+        products.length > 0 && (
+          <section class="cisc-category-section">
+            <h2 class="cisc-category-section__title">Products</h2>
+            <div class="cisc-product-grid">
+              {products.map((item) => (
+                <a class="cisc-product-card" href={`/product/${item.slug}/`}>
+                  <div class="cisc-product-card__img">
+                    <img
+                      src={item.image ?? "/wp-content/uploads/woocommerce-placeholder.png"}
+                      alt={item.title}
+                      loading="lazy"
+                      width="300"
+                      height="300"
+                    />
+                  </div>
+                  <div class="cisc-product-card__body">
+                    <h3>{item.title}</h3>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )
+      }
+      {
+        subcategories.length === 0 && products.length === 0 && (
+          <p>
+            No products listed in this category yet. <a href="/all-products/">Browse the full catalog</a> or{" "}
+            <a href="/contact-us/">contact us</a> for assistance.
+          </p>
+        )
+      }
+    </div>
+  </main>
+</BaseLayout>

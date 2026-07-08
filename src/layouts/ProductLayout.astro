@@ -1,0 +1,98 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import PageHeader from "../components/PageHeader.astro";
+
+interface Breadcrumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  brand?: string;
+  category?: string;
+  images?: string[];
+  breadcrumb?: Breadcrumb[];
+}
+
+const { title, description, brand, category, images = [], breadcrumb = [] } = Astro.props;
+
+const pageDescription =
+  description ?? `${title} — welding and cutting equipment from Center Industrial Supply Corporation.`;
+
+const breadcrumbHtml = breadcrumb.length
+  ? breadcrumb
+      .map((crumb, index) => {
+        if (crumb.href && index < breadcrumb.length - 1) {
+          return `<a href="${crumb.href}">${crumb.label}</a>`;
+        }
+        return crumb.label;
+      })
+      .join(" / ")
+  : category
+    ? `<a href="/">Home</a> / <a href="/product-category/${category.split("/")[0]}/">${category.split("/")[0].replace(/-/g, " ")}</a> / ${title}`
+    : `<a href="/">Home</a> / <a href="/all-products/">Products</a> / ${title}`;
+
+const categoryHref = category ? `/product-category/${category}/` : undefined;
+const primaryImage = images[0];
+---
+
+<BaseLayout title={`${title} — Center Industrial Supply Corporation`} description={pageDescription}>
+  <PageHeader title={title} breadcrumb={breadcrumbHtml} />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      <article class="cisc-product-detail">
+        <div class="cisc-product-detail__media">
+          {
+            images.length > 0 ? (
+              <div class="cisc-product-detail__gallery">
+                {images.map((image) => (
+                  <img src={image} alt={title} loading="lazy" width="400" height="400" />
+                ))}
+              </div>
+            ) : (
+              <div class="cisc-product-detail__placeholder">
+                <img
+                  src="/wp-content/uploads/woocommerce-placeholder.png"
+                  alt={title}
+                  width="400"
+                  height="400"
+                />
+              </div>
+            )
+          }
+        </div>
+        <div class="cisc-product-detail__summary">
+          {brand && <div class="cisc-product-detail__brand">{brand}</div>}
+          <h1>{title}</h1>
+          {description && <p class="cisc-product-detail__lead">{description}</p>}
+          <div class="cisc-product-detail__actions">
+            <a class="cisc-btn cisc-btn--primary" href="/contact-us/">Product Inquiry</a>
+          </div>
+          <dl class="cisc-product-detail__meta">
+            {
+              category && categoryHref && (
+                <>
+                  <dt>Category</dt>
+                  <dd>
+                    <a href={categoryHref}>{category.split("/").pop()?.replace(/-/g, " ")}</a>
+                  </dd>
+                </>
+              )
+            }
+            {
+              brand && (
+                <>
+                  <dt>Brand</dt>
+                  <dd>{brand}</dd>
+                </>
+              )
+            }
+          </dl>
+        </div>
+      </article>
+      <slot name="body" />
+    </div>
+  </main>
+</BaseLayout>

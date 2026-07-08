@@ -6,7 +6,7 @@ Live site: https://center-industrial-supply.github.io
 
 ## Framework: Astro
 
-This site uses [Astro](https://astro.build) as the static site generator. Main pages are built from Astro components; archived product and category pages remain as legacy HTML in `public/` and are wrapped with the shared header/footer via `public/assets/js/layout.js`.
+This site uses [Astro](https://astro.build) as the static site generator. Content is organized as markdown files with YAML frontmatter (Jekyll-style), built into pages via Astro content collections and layouts.
 
 ### Development
 
@@ -21,26 +21,69 @@ npm run preview  # preview production build
 
 ```
 src/
-  components/     # Header, Footer, CategoryCards, etc.
-  data/           # Categories, brands (shared site data)
-  layouts/        # BaseLayout.astro
-  lib/            # Build-time utilities (product catalog scanner)
-  pages/          # Astro pages (home, about, products, etc.)
+  content/
+    products/              # 174 product pages (markdown + frontmatter)
+    product-categories/    # 87 category pages (nested directories)
+  components/              # Header, Footer, CategoryCards, etc.
+  data/                    # Top-level category nav data
+  layouts/
+    BaseLayout.astro       # Site shell (header/footer)
+    PageLayout.astro       # Standard interior pages
+    ProductLayout.astro    # Single product pages
+    CategoryLayout.astro   # Category listing pages
+  lib/                     # Build-time utilities
+  pages/                   # Route entry points (home, about, dynamic routes)
 public/
-  assets/         # CSS, JS, layout partials for legacy pages
-  product/        # Archived product pages (Wayback)
-  product-category/
-  wp-content/     # Images and media from original site
-scripts/          # Wayback recovery utilities
+  assets/                  # CSS, JS
+  wp-content/              # Images and media from original site
+scripts/
+  migrate-to-content.py    # One-time HTML → markdown migration
+  download-wayback.py      # Wayback recovery utilities
 ```
 
-### Editing main pages
+### Content model (Jekyll-style frontmatter)
 
-Edit the Astro pages in `src/pages/` and shared components in `src/components/`. Site data (categories, brands) lives in `src/data/`. The product catalog at `/all-products/` is generated at build time from archived pages in `public/product/`.
+**Product** (`src/content/products/buddy-arc-145.md`):
 
-### Legacy archive pages
+```yaml
+---
+title: "Buddy Arc 145"
+slug: "buddy-arc-145"
+layout: product
+description: "..."
+brand: "ESAB"
+category: "standard-equipment/mma-welding-equipment/esab"
+images:
+  - "/wp-content/uploads/2020/10/Buddy-Arc-145.jpg"
+---
+```
 
-Product and category pages under `public/` are untouched WordPress exports. They load the modern header/footer via `layout.js` at runtime. Styles are in `public/assets/css/legacy.css`.
+**Category** (`src/content/product-categories/standard-equipment.md`):
+
+```yaml
+---
+title: "Standard Equipment"
+slug: "standard-equipment"
+layout: category
+description: "Manual Gas Apparatus, MMA, MIG/MAG..."
+subcategories:
+  - slug: "gas-welding-and-cutting-apparatus"
+    title: "Gas Welding and Cutting Apparatus"
+    image: "/wp-content/uploads/..."
+---
+```
+
+### Editing pages
+
+- **Products & categories**: Edit markdown files in `src/content/`. URLs are preserved (`/product/{slug}/`, `/product-category/{nested-path}/`).
+- **Site pages** (home, about, contact, support): Edit Astro files in `src/pages/` with frontmatter blocks.
+- **Navigation data**: `src/data/categories.ts`, `src/data/brands.ts`
+
+To re-migrate from archived HTML (if re-downloaded from Wayback):
+
+```bash
+python3 scripts/migrate-to-content.py
+```
 
 ## Recovery scripts
 
@@ -53,6 +96,7 @@ export OUTPUT_DIR="./public"
 export SKIP_LIVE_FALLBACK=true
 python3 scripts/download-wayback.py
 python3 scripts/cleanup-wayback-refs.py ./public
+python3 scripts/migrate-to-content.py
 ```
 
 See [BROKEN-ASSETS.md](BROKEN-ASSETS.md) for missing URLs from the archive.

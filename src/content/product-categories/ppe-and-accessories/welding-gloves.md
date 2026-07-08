@@ -1,0 +1,26 @@
+---
+title: "Welding Gloves"
+slug: "ppe-and-accessories/welding-gloves"
+layout: category
+description: "Welding Gloves"
+parent: "ppe-and-accessories"
+products:
+  - slug: "esab-leather-welding-gloves"
+    title: "Esab Leather Welding Gloves"
+    image: "/wp-content/uploads/2023/05/ESAB-Leather-Welding-Gloves-2.jpg"
+  - slug: "generic-welding-gloves"
+    title: "Generic Welding Gloves"
+    image: "/wp-content/uploads/2023/05/Generic-Welding-Gloves-for-MMA-MIG.jpg"
+  - slug: "ironcat-premium-split-cowhide-leather-welding-gloves"
+    title: "Ironcat Premium Split Cowhide Leather Welding Gloves"
+    image: "/wp-content/uploads/2023/05/Screenshot-2023-05-29-150625.png"
+  - slug: "ironcat-tig-goatskin-welding-gloves"
+    title: "Ironcat Tig Goatskin Welding Gloves"
+    image: "/wp-content/uploads/2023/05/63f58376-f751-413b-8a63-8a07fe95b329.5dd9ac0c00951968172cf7544018bff6-rotated.jpg"
+  - slug: "weldflame-welding-gloves-orange"
+    title: "Weldflame Welding Gloves Orange"
+    image: "/wp-content/uploads/2023/05/Weldflame-MMA-MIG-welding-gloves-01-orange.jpg"
+  - slug: "weldflame-welding-gloves-yellow"
+    title: "Weldflame Welding Gloves Yellow"
+    image: "/wp-content/uploads/2023/05/Weldflame-MMA-MIG-welding-gloves-02-yellow.jpg"
+---

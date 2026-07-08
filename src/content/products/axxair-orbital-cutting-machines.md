@@ -1,0 +1,11 @@
+---
+title: "Orbital Cutting Machines"
+slug: "axxair-orbital-cutting-machines"
+layout: product
+description: "High quality cutting is guaranteed by orbital cutting machines, where the saw blade rotates around the tube."
+brand: "Axxair"
+images:
+- "/wp-content/uploads/2020/10/Axxair-Cutting.jpg"
+---
+
+<p><b>AXXAIR Orbital Cutting Machines</b><p><span style="font-weight: 400;">High quality cutting is guaranteed by orbital cutting machines, where the saw blade rotates around the tube. </span><p><span style="font-weight: 400;">This allows the tube geometry to remain intact: the tube is not distorted by clamping (stainless steel concentric jaws) or by cutting forces, as the blade follows the tube section and the tube does not rotate. </span><p><span style="font-weight: 400;">Orbital cutting is well suited to automatic welding, as it allows the seam to be closed cleanly providing a perfect seal for the penetration phase before adding the wire. </span><p><span style="font-weight: 400;">AXXAIR has the </span><b>largest orbital cutting range in the world </b><span style="font-weight: 400;">with 11 different models for cutting tubes with diameters from </span><b>5 to 1100 mm!</b><p> <p><b>FLEXIBILITY, PRODUCTIVITY </b><p><span style="font-weight: 400;">AXXAIR frames are quickly and easily scalable for bevelling and orbital welding.</span><p> <p><b>QUALITY </b><p><span style="font-weight: 400;">Cutting with no tube distortion,(multi-contact concentric clamping) ideal for thin walled stainless steel tubes.</span><p><span style="font-weight: 400;">High quality geometric cutting (perpendicularity of &lt;0.25 mm) and excellent surface quality (limited burring).</span><p> <p><b>PORTABILITY </b><p><span style="font-weight: 400;">Portable machines, which are easy to move and can be used both on site or in a workshop. Perfect preparation for thick tubes before bevelling and welding with filler wire.</span><p> <p> <p><span style="text-align:center; display: block;" class=embed-youtube><iframe sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox" src="https://www.youtube.com/embed/OPcLAiH5Cb8?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-US&autohide=2&wmode=transparent" allowfullscreen class=youtube-player height=552 style=border:0; width=980></iframe></span>
