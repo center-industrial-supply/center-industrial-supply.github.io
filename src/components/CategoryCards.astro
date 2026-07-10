@@ -12,8 +12,14 @@ const { categories } = Astro.props;
   {
     categories.map((category) => (
       <a class="cisc-category-card" href={category.href}>
-        <div class="cisc-category-card__icon" aria-hidden="true">
-          {category.icon}
+        <div class="cisc-category-card__image">
+          <img
+            src={category.image}
+            alt=""
+            loading="lazy"
+            width="400"
+            height="225"
+          />
         </div>
         <h3>{category.name}</h3>
         <p>{category.description}</p>

@@ -3,6 +3,7 @@ title: "PPE & Welding Accessories"
 slug: "ppe-and-accessories"
 layout: category
 description: "Welding accessories to help make your welding job easier and safer."
+image: "/images/categories/ppe-and-accessories.jpg"
 subcategories:
   - slug: "airfiltermask"
     title: "Air Filter Mask"

@@ -33,6 +33,7 @@ const productCategories = defineCollection({
     slug: z.string(),
     layout: z.literal("category"),
     description: z.string().optional(),
+    image: z.string().optional(),
     parent: z.string().optional(),
     subcategories: z.array(categoryItemSchema).optional(),
     products: z.array(categoryItemSchema).optional(),

@@ -2,6 +2,7 @@
 title: "Stud Welding Equipment"
 slug: "stud-welding-equipment"
 layout: category
+image: "/images/categories/stud-welding-equipment.jpg"
 products:
   - slug: "shear-stud-welder-st2500"
     title: "Shear Stud Welder St2500"

@@ -2,6 +2,7 @@
 title: "Tube and Pipe Cutting & Welding Solutions"
 slug: "tube-and-pipe-cutting-and-welding-solutions"
 layout: category
+image: "/images/categories/tube-and-pipe-cutting-and-welding-solutions.jpg"
 subcategories:
   - slug: "exact-pipe-cutting-machines"
     title: "Exact Pipe Cutting Machines"

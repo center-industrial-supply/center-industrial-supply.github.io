@@ -2,6 +2,7 @@
 title: "Engine Driven Welders"
 slug: "engine-driven-welder"
 layout: category
+image: "/images/categories/engine-driven-welder.jpg"
 products:
   - slug: "dgw300m-my"
     title: "Dgw300M My"

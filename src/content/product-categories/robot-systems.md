@@ -3,6 +3,7 @@ title: "Robot Systems"
 slug: "robot-systems"
 layout: category
 description: "Programmable industrial robots for factory automation."
+image: "/images/categories/robot-systems.jpg"
 subcategories:
   - slug: "welding-robots"
     title: "Welding Robots"
