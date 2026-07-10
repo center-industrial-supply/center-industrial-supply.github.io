@@ -35,7 +35,9 @@ src/
   pages/                   # Route entry points (home, about, dynamic routes)
 public/
   assets/                  # CSS, JS
-  wp-content/              # Images and media from original site
+  images/                  # Product, category, and brand images (preferred for new assets)
+    products/              # Product photography
+  wp-content/              # Legacy WordPress assets from archive (do not add new files here)
 scripts/
   migrate-to-content.py    # One-time HTML → markdown migration
   download-wayback.py      # Wayback recovery utilities
@@ -54,7 +56,7 @@ description: "..."
 brand: "ESAB"
 category: "standard-equipment/mma-welding-equipment/esab"
 images:
-  - "/wp-content/uploads/2020/10/Buddy-Arc-145.jpg"
+  - "/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
 ---
 ```
 
@@ -69,9 +71,11 @@ description: "Manual Gas Apparatus, MMA, MIG/MAG..."
 subcategories:
   - slug: "gas-welding-and-cutting-apparatus"
     title: "Gas Welding and Cutting Apparatus"
-    image: "/wp-content/uploads/..."
+    image: "/images/categories/gas-welding-and-cutting-apparatus.png"
 ---
 ```
+
+New images belong under `public/images/` (see [agents.md](agents.md)). Legacy `/wp-content/uploads/` paths from the WordPress archive may still appear in migrated content.
 
 ### Editing pages
 
@@ -100,6 +104,8 @@ python3 scripts/migrate-to-content.py
 ```
 
 See [BROKEN-ASSETS.md](BROKEN-ASSETS.md) for missing URLs from the archive.
+
+Agent conventions (image paths, content model, skills): [agents.md](agents.md).
 
 ## Deployment
 
