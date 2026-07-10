@@ -3,6 +3,7 @@ title: "Welding & Cutting Torch"
 slug: "welding-and-cutting-torch"
 layout: category
 description: "Welding & Cutting Torch"
+image: "/images/categories/welding-and-cutting-torch.jpg"
 products:
   - slug: "otc-wt3510-co2-mig-mag-blue-torch-ii"
     title: "Otc Wt3510 Co2 Mig Mag Blue Torch Ii"

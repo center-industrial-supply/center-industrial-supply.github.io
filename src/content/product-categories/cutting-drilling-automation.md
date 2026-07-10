@@ -3,6 +3,7 @@ title: "CNC Cutting & Drilling Automation"
 slug: "cutting-drilling-automation"
 layout: category
 description: "Computer numerically controlled and programmable plate, pipe, beam cutting machines and drilling machines."
+image: "/images/categories/cutting-drilling-automation.jpg"
 subcategories:
   - slug: "cnc-laser-cutting-machines"
     title: "CNC Laser Cutting Machines"

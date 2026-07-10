@@ -3,6 +3,7 @@ title: "Standard Welding Automation"
 slug: "standard-welding-automation"
 layout: category
 description: "Simple welding automation equipment for increased productivity."
+image: "/images/categories/standard-welding-automation.jpg"
 subcategories:
   - slug: "submerged-arc-welding-equipment"
     title: "Submerged Arc Welding Equipment"

@@ -3,6 +3,7 @@ title: "Welding Consumables"
 slug: "welding-consumables"
 layout: category
 description: "Filler metals to match your welding equipment and your quality requirements"
+image: "/images/categories/welding-consumables.jpg"
 products:
   - slug: "esab-7018l-3-2x350mm-20kg"
     title: "Esab 7018L 3 2X350Mm 20Kg"

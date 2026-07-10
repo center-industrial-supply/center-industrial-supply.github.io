@@ -36,6 +36,8 @@ images:
 
 Use the **`retrieve-product-image`** skill (`.cursor/skills/retrieve-product-image/`) when sourcing product images from brand websites.
 
+Use the **`find-category-stock-photo`** skill (`.cursor/skills/find-category-stock-photo/`) when sourcing royalty-free stock photos for product category cards.
+
 ### Other images
 
 | Type | Path |

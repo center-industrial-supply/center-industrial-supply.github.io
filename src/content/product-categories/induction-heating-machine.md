@@ -3,6 +3,7 @@ title: "Induction Heating Machine"
 slug: "induction-heating-machine"
 layout: category
 description: "Induction Heating Machines"
+image: "/images/categories/induction-heating-machine.jpg"
 products:
   - slug: "powerduction-10r"
     title: "Powerduction 10R"

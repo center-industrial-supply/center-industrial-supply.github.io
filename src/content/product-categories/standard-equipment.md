@@ -3,6 +3,7 @@ title: "Standard Equipment"
 slug: "standard-equipment"
 layout: category
 description: "Manual Gas Apparatus, MMA, MIG/MAG, TIG, Multi-Process, Plasma Cutting Machines"
+image: "/images/categories/standard-equipment.jpg"
 subcategories:
   - slug: "gas-welding-and-cutting-apparatus"
     title: "Gas Welding and Cutting Apparatus"
