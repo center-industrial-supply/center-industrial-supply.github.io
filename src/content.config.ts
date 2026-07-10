@@ -41,7 +41,29 @@ const productCategories = defineCollection({
   }),
 });
 
+const brandProductCategorySchema = z.object({
+  slug: z.string(),
+  title: z.string(),
+  categoryPath: z.string(),
+});
+
+const brands = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/brands" }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string(),
+    layout: z.literal("brand"),
+    description: z.string().optional(),
+    featured: z.boolean().optional(),
+    officialUrl: z.string().url().optional(),
+    logo: z.string().optional(),
+    productCount: z.number().optional(),
+    brandProductCategories: z.array(brandProductCategorySchema).optional(),
+  }),
+});
+
 export const collections = {
   products,
   "product-categories": productCategories,
+  brands,
 };
