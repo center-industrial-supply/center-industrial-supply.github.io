@@ -56,7 +56,7 @@ description: "..."
 brand: "ESAB"
 category: "standard-equipment/mma-welding-equipment/esab"
 images:
-  - "/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
+  - "/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
 ---
 ```
 
