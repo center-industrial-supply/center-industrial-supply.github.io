@@ -49,6 +49,14 @@ def download_url(url: str, dest: Path) -> None:
         raise RuntimeError("URL returned HTML, not an image — check the image URL")
 
 
+def is_lfs_pointer(path: Path) -> bool:
+    try:
+        first_line = path.read_text(encoding="utf-8", errors="ignore").splitlines()[0]
+    except (OSError, IndexError):
+        return False
+    return "git-lfs.github.com/spec" in first_line
+
+
 def validate_image(
     path: Path,
     *,
@@ -57,6 +65,11 @@ def validate_image(
     min_bytes: int,
 ) -> tuple[int, int, str]:
     Image = _require_pillow()
+
+    if is_lfs_pointer(path):
+        raise ValueError(
+            "File is a Git LFS pointer, not image data — run 'git lfs pull' or re-download"
+        )
 
     size = path.stat().st_size
     if size < min_bytes:
