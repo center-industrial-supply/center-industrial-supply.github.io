@@ -38,6 +38,18 @@ Use the **`retrieve-product-image`** skill (`.cursor/skills/retrieve-product-ima
 
 Use the **`find-category-stock-photo`** skill (`.cursor/skills/find-category-stock-photo/`) when sourcing royalty-free stock photos for product category cards.
 
+### Git LFS
+
+All `.jpg` and `.png` files are tracked by Git LFS (see `.gitattributes`).
+
+| Rule | Detail |
+|------|--------|
+| Dev setup | Run `git lfs install && git lfs pull` after cloning |
+| Committing images | Download real binaries; `git add` stores them in LFS automatically |
+| Never commit pointers | Pointer files start with `version https://git-lfs.github.com/spec/v1` — reject these |
+| Verify locally | `file public/images/...` must say `JPEG image data` or `PNG image data`, not `ASCII text` |
+| CI deploy | `.github/workflows/deploy.yml` checks out with `lfs: true` |
+
 ### Other images
 
 | Type | Path |

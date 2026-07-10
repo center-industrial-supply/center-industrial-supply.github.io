@@ -150,9 +150,24 @@ python3 .cursor/skills/find-category-stock-photo/scripts/download-category-image
 
 - File exists and size is > 30 KB
 - Image dimensions are at least 600×400
-- File is a valid image
+- File is a valid image (not a Git LFS pointer — see below)
 
 Record attribution in `references/category-image-sources.md` (photographer, source URL, category slug).
+
+#### Git LFS (required for this repo)
+
+All `.jpg` and `.png` files are tracked by Git LFS. The download script and CI both reject LFS pointer text masquerading as images.
+
+| Step | Command / check |
+|------|-----------------|
+| Repo context | `git add` stores binaries in LFS automatically via smudge/clean filters |
+| Post-commit verify | `git lfs ls-files public/images/categories/{slug}.jpg` — file must appear |
+| Pre-push verify | `file public/images/categories/{slug}.jpg` — must say `JPEG image data`, not `ASCII text` |
+| Pointer rejection | First line must **not** contain `git-lfs.github.com/spec` |
+| Local dev setup | Fresh clones need `git lfs install && git lfs pull` |
+| CI deploy | `.github/workflows/deploy.yml` must checkout with `lfs: true` |
+
+Never commit pointer files manually. Always download real binaries and let `git add` handle LFS.
 
 ---
 
@@ -183,10 +198,11 @@ Also update `src/data/categories.ts` — replace `icon` with `image` using the s
 ### Step 6: Validate
 
 1. Confirm the file exists at `public/images/categories/{slug}.jpg`
-2. Visually inspect the image — confirm category-fit checklist passes
-3. Run `npm run build` to ensure the content schema accepts the frontmatter
-4. Spot-check the homepage and `/products/` category cards in the browser
-5. Report: source URL, photographer (if known), saved path, and dimensions
+2. Run `file public/images/categories/{slug}.jpg` — must report `JPEG image data`, not `ASCII text`
+3. Visually inspect the image — confirm category-fit checklist passes
+4. Run `npm run build` to ensure the content schema accepts the frontmatter
+5. Spot-check the homepage and `/products/` category cards in the browser
+6. Report: source URL, photographer (if known), saved path, and dimensions
 
 ---
 
