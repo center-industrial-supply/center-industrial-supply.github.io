@@ -1,6 +1,6 @@
 ---
 name: find-category-stock-photo
-description: "Find and install a royalty-free stock photo for a Center Industrial product category from sources such as Unsplash. Use when an agent needs to: (1) Replace category emoji icons with stock photography, (2) Add or update a category hero/thumbnail image in product category markdown, (3) Source royalty-free category imagery, or (4) Verify that a stock photo fits a product category before committing it."
+description: "Find and install a royalty-free stock photo for a Center Industrial product category or subcategory from sources such as Unsplash. Use when an agent needs to: (1) Replace category emoji icons with stock photography, (2) Add or update a category or subcategory hero/thumbnail image in product category markdown, (3) Source royalty-free category imagery, or (4) Verify that a stock photo fits a product category before committing it."
 paths:
   - "src/content/product-categories/*.md"
   - "public/images/categories/**/*"
@@ -15,9 +15,9 @@ category image, category photo, stock photo, royalty-free, unsplash, pexels, cat
 
 ## Overview
 
-Find and install a **royalty-free stock photograph** for a Center Industrial **top-level product category**. Unlike product images (see `retrieve-product-image`), category photos are thematic/industrial stock shots that represent the category at a glance — not specific branded equipment catalog shots.
+Find and install a **royalty-free stock photograph** for a Center Industrial **top-level product category** or **subcategory** listed under a parent's `subcategories:` frontmatter. Unlike product images (see `retrieve-product-image`), category photos are thematic/industrial stock shots that represent the category at a glance — not specific branded equipment catalog shots.
 
-Prefer **Unsplash** and other sources with clear commercial-use licenses. Download and host images locally under `public/images/categories/`.
+Prefer **Unsplash** and other sources with clear commercial-use licenses. Download and host images locally under `public/images/categories/` (top-level) or `public/images/categories/subcategories/` (subcategories).
 
 ---
 
@@ -27,6 +27,24 @@ Prefer **Unsplash** and other sources with clear commercial-use licenses. Downlo
 - The user asks to add stock photography to product category markdown
 - A category `image:` path is missing, broken, or needs replacement
 - Bulk refresh of category imagery across the catalog
+- Subcategory cards on a parent category page still use legacy wp-content thumbnails
+
+---
+
+## Subcategories
+
+Subcategories are the items listed under `subcategories:` in a parent category markdown file (e.g. `standard-equipment/mig-mag-welding-equipment`). They appear as cards on the parent category page (`CategoryLayout`).
+
+| Aspect | Top-level category | Subcategory |
+|--------|-------------------|-------------|
+| Markdown | `src/content/product-categories/{slug}.md` | Parent file's `subcategories:` array |
+| Image path | `/images/categories/{slug}.jpg` | `/images/categories/subcategories/{slug}.jpg` |
+| Storage | `public/images/categories/{slug}.jpg` | `public/images/categories/subcategories/{slug}.jpg` |
+| Also update | `src/data/categories.ts` | Parent `subcategories:` `image:` only |
+
+**Important:** Only update `subcategories:` entries. Do **not** change `products:` image paths — those are individual product catalog shots.
+
+When verifying category fit for subcategories, also check **disambiguation from sibling subcategories** under the same parent (e.g. laser _cutting_ vs plasma _cutting_, orbital _cutting_ vs orbital _welding_).
 
 ---
 
@@ -162,6 +180,7 @@ All `.jpg` and `.png` files are tracked by Git LFS. The download script and CI b
 |------|-----------------|
 | Repo context | `git add` stores binaries in LFS automatically via smudge/clean filters |
 | Post-commit verify | `git lfs ls-files public/images/categories/{slug}.jpg` — file must appear |
+| Subcategory path | Same checks for `public/images/categories/subcategories/{slug}.jpg` |
 | Pre-push verify | `file public/images/categories/{slug}.jpg` — must say `JPEG image data`, not `ASCII text` |
 | Pointer rejection | First line must **not** contain `git-lfs.github.com/spec` |
 | Local dev setup | Fresh clones need `git lfs install && git lfs pull` |
