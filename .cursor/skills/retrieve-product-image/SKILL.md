@@ -111,10 +111,10 @@ Save the image under `public/images/products/` (not `public/wp-content/` — thi
 **Path convention:**
 
 ```
-public/images/products/{YYYY}/{MM}/{filename}
+public/images/products/{slug}/{filename}
 ```
 
-- Use the current year and month (e.g. `2026/07/`)
+- **Directory:** `{slug}` from the product markdown frontmatter (e.g. `buddy-arc-145/`)
 - **Filename:** `{Brand}-{Product-Name}.{ext}` — Pascal-case words, hyphens between words, e.g. `ESAB-Buddy-Arc-145.jpg`, `GYS-PROTIG-200-DC-HF.jpg`
 - Normalize from `title` and `brand`; avoid spaces in filenames
 - Preserve the original extension (`.jpg`, `.png`, `.webp`)
@@ -124,13 +124,13 @@ public/images/products/{YYYY}/{MM}/{filename}
 ```bash
 python3 .cursor/skills/retrieve-product-image/scripts/download-product-image.py \
   --url "https://brand.example/path/to/image.jpg" \
-  --output "public/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
+  --output "public/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
 ```
 
 Or with curl when the script is not needed:
 
 ```bash
-curl -fsSL -o "public/images/products/2026/07/ESAB-Buddy-Arc-145.jpg" "https://..."
+curl -fsSL -o "public/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg" "https://..."
 ```
 
 **After download, verify:**
@@ -147,7 +147,7 @@ Add or replace the `images` field in the product markdown file.
 
 ```yaml
 images:
-  - "/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
+  - "/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
 ```
 
 Rules:
@@ -168,7 +168,7 @@ description: "..."
 brand: "ESAB"
 category: "standard-equipment/mma-welding-equipment/esab"
 images:
-  - "/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
+  - "/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
 ---
 ```
 
@@ -238,7 +238,7 @@ Before marking complete, confirm:
 
 - [ ] Image is **product photography**, not an action/lifestyle shot
 - [ ] Image is from an **official or authorized** source
-- [ ] Saved under `public/images/products/{YYYY}/{MM}/`
+- [ ] Saved under `public/images/products/{slug}/`
 - [ ] Filename follows `{Brand}-{Product-Name}.{ext}` convention
 - [ ] Product markdown updated with `images:` site-root path
 - [ ] Image verified readable and meets minimum dimensions
@@ -263,6 +263,6 @@ Before marking complete, confirm:
 1. Read product → identify `title`, `brand`, `slug`
 2. Search brand site → product page → hero/gallery image
 3. Reject action photos → accept studio/catalog shots
-4. Download highest resolution → `public/images/products/{YYYY}/{MM}/{Brand}-{Product}.{ext}`
+4. Download highest resolution → `public/images/products/{slug}/{Brand}-{Product}.{ext}`
 5. Update `images:` in product markdown
 6. Verify image visually and build
