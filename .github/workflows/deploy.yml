@@ -53,3 +53,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    needs: [build, deploy]
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - name: Notify Slack DM on success
+        if: needs.build.result == 'success' && needs.deploy.result == 'success'
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: U0B79NC9GPP
+            text: ":white_check_mark: *Center website main build succeeded* — deployed to GitHub Pages (<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|view run>)"
+
+      - name: Notify Slack DM on failure
+        if: needs.build.result != 'success' || needs.deploy.result != 'success'
+        uses: slackapi/slack-github-action@v2.0.0
+        with:
+          method: chat.postMessage
+          token: ${{ secrets.SLACK_BOT_TOKEN }}
+          payload: |
+            channel: U0B79NC9GPP
+            text: ":x: *Center website main build failed* — build: `${{ needs.build.result }}`, deploy: `${{ needs.deploy.result }}` (<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|view run>)"
