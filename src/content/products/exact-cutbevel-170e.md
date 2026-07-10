@@ -3,10 +3,6 @@ title: "Exact Cut+Bevel 170E"
 slug: "exact-cutbevel-170e"
 layout: product
 description: "PipeCut+Bevel170E does something that a portable power tool has never done before"
-images:
-- "/wp-content/uploads/2021/01/Cut-Bevel-170e.jpg"
-- "/wp-content/uploads/2021/01/Cut-_-Bevel-Cast-Iron-Pipe.jpg"
-- "/wp-content/uploads/2021/01/Cut-_-Bevel-Plastic-Pipe.jpg"
 ---
 
 <p><b>Exact Cut+Bevel 170E</b><p><b>Cut and bevel cast iron pipes </b><p><span style="font-weight: 400;">PipeCut+Bevel170E does something that a portable power tool has never done before: Cuts and bevels cast iron pipes in one process due to the cleverly designed diamond disc, you can adjust it to make correct 15 degree bevel to all commonly used pipe dimensions. When you need to connect pipes with socket joints the PipeCut+Bevel 170E saves time and money and prevents any leaks in the connected pipes. It is suitable also for PVC and other plastic pipes.</span><p> <p><b>Technical details:</b><ul><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">Range of use: 15-170 mm</span><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">Max. wall thickness cutting: 8 mm steel, 14 mm plastics</span><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">Weight: 5.7 kg</span><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">Voltage: 220 – 240 V | 1010 W</span><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">No-load speed: 4.000 U/min</span><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">ø blade: 140 mm</span><li style="font-weight: 400;" aria-level=1><span style="font-weight: 400;">Mounting bore: 62 mm</span></ul><p> <p><span style="text-align:center; display: block;" class=embed-youtube><iframe sandbox="allow-scripts allow-same-origin allow-popups allow-presentation allow-popups-to-escape-sandbox" src="https://www.youtube.com/embed/lFnmV3PV-hQ?version=3&rel=1&showsearch=0&showinfo=1&iv_load_policy=1&fs=1&hl=en-US&autohide=2&wmode=transparent" allowfullscreen class=youtube-player height=552 loading=lazy style=border:0; width=980></iframe></span>
