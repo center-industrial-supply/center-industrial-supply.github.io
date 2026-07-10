@@ -150,9 +150,19 @@ python3 .cursor/skills/find-category-stock-photo/scripts/download-category-image
 
 - File exists and size is > 30 KB
 - Image dimensions are at least 600×400
-- File is a valid image
+- File is a valid image (not a Git LFS pointer — see below)
 
 Record attribution in `references/category-image-sources.md` (photographer, source URL, category slug).
+
+#### Git LFS (required)
+
+This repo tracks all `*.jpg` and `*.png` via Git LFS (see `.gitattributes`). After download:
+
+1. `git add` stores the binary in LFS automatically — do not paste or commit pointer text manually
+2. Confirm tracking: `git lfs ls-files public/images/categories/{slug}.jpg`
+3. Confirm real file on disk: `file public/images/categories/{slug}.jpg` must report `JPEG image data`, not `ASCII text`
+4. Fresh clones need `git lfs install && git lfs pull` before local dev/build
+5. CI deploy workflow must checkout with `lfs: true` (see `.github/workflows/deploy.yml`)
 
 ---
 
@@ -183,10 +193,11 @@ Also update `src/data/categories.ts` — replace `icon` with `image` using the s
 ### Step 6: Validate
 
 1. Confirm the file exists at `public/images/categories/{slug}.jpg`
-2. Visually inspect the image — confirm category-fit checklist passes
-3. Run `npm run build` to ensure the content schema accepts the frontmatter
-4. Spot-check the homepage and `/products/` category cards in the browser
-5. Report: source URL, photographer (if known), saved path, and dimensions
+2. Confirm it is not an LFS pointer: `bash scripts/verify-not-lfs-pointers.sh`
+3. Visually inspect the image — confirm category-fit checklist passes
+4. Run `npm run build` to ensure the content schema accepts the frontmatter
+5. Spot-check the homepage and `/products/` category cards in the browser
+6. Report: source URL, photographer (if known), saved path, and dimensions
 
 ---
 

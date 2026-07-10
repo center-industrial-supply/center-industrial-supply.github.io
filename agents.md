@@ -75,9 +75,23 @@ images:
 ---
 ```
 
+## Git LFS
+
+All `*.jpg` and `*.png` files are tracked with Git LFS (see `.gitattributes`). Git stores small pointer files in the tree; binaries live in LFS storage.
+
+| Context | Requirement |
+|---------|-------------|
+| Local dev | Run `git lfs install && git lfs pull` after clone so working-tree files are real images |
+| CI / deploy | `actions/checkout` must use `lfs: true` or builds copy pointer text into `dist/` |
+| Adding images | Download real binaries and `git add` — never commit LFS pointer text manually |
+| Verify | `bash scripts/verify-not-lfs-pointers.sh` before build |
+
+Symptom of missing LFS pull: image URLs return ~130 bytes of text starting with `version https://git-lfs.github.com/spec/v1`.
+
 ## Commands
 
 ```bash
+git lfs install && git lfs pull   # after clone
 npm install
 npm run dev      # http://localhost:4321
 npm run build
