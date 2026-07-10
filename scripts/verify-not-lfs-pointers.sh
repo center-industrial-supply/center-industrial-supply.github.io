@@ -24,6 +24,7 @@ check_glob() {
 }
 
 check_glob "public/images/categories/*.jpg" "category images"
+check_glob "public/images/categories/subcategories/*.jpg" "subcategory images"
 check_glob "public/images/products/**/*.{jpg,jpeg,png}" "product images"
 
 if [ "$fail" -ne 0 ]; then
