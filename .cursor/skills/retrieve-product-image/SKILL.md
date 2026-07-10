@@ -3,7 +3,7 @@ name: retrieve-product-image
 description: "Retrieve a high-quality product photography image for a Center Industrial product from official brand sources on the web. Use when an agent needs to: (1) Find or add a product image for a product page, (2) Replace a missing or placeholder product image, (3) Source official brand product photography (not customer action or in-use photos), or (4) Download and wire up product images for the Center Industrial website."
 paths:
   - "src/content/products/**/*.md"
-  - "public/wp-content/uploads/**/*"
+  - "public/images/products/**/*"
 ---
 
 # Retrieve Product Image
@@ -22,7 +22,7 @@ Prefer images from the **official brand website** at the **highest practical res
 
 ## When to Use
 
-- A product page is missing an `images:` entry or shows the WooCommerce placeholder
+- A product page is missing an `images:` entry or shows the placeholder (`/images/placeholder.png`)
 - The user asks to find, add, or replace a product image
 - Bulk image recovery for products listed in `BROKEN-ASSETS.md`
 - A product image URL is unreachable (see `scripts/remove-unreachable-product-images.py`)
@@ -106,16 +106,16 @@ If only a thumbnail is available on the page, inspect the page HTML/JSON for a l
 
 ### Step 4: Download and Store the Image
 
-Save the image under `public/wp-content/uploads/` using the existing WordPress-style layout.
+Save the image under `public/images/products/` (not `public/wp-content/` — this site is moving away from WordPress).
 
 **Path convention:**
 
 ```
-public/wp-content/uploads/{YYYY}/{MM}/{filename}
+public/images/products/{YYYY}/{MM}/{filename}
 ```
 
 - Use the current year and month (e.g. `2026/07/`)
-- **Filename:** `{Brand}-{Product-Name}.{ext}` — Pascal-case words, hyphens between words, matching existing files like `GYS-PROTIG-200-DC-HF.jpg` and `ARC-400.jpg`
+- **Filename:** `{Brand}-{Product-Name}.{ext}` — Pascal-case words, hyphens between words, e.g. `ESAB-Buddy-Arc-145.jpg`, `GYS-PROTIG-200-DC-HF.jpg`
 - Normalize from `title` and `brand`; avoid spaces in filenames
 - Preserve the original extension (`.jpg`, `.png`, `.webp`)
 
@@ -124,13 +124,13 @@ public/wp-content/uploads/{YYYY}/{MM}/{filename}
 ```bash
 python3 .cursor/skills/retrieve-product-image/scripts/download-product-image.py \
   --url "https://brand.example/path/to/image.jpg" \
-  --output "public/wp-content/uploads/2026/07/ESAB-Buddy-Arc-145.jpg"
+  --output "public/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
 ```
 
 Or with curl when the script is not needed:
 
 ```bash
-curl -fsSL -o "public/wp-content/uploads/2026/07/ESAB-Buddy-Arc-145.jpg" "https://..."
+curl -fsSL -o "public/images/products/2026/07/ESAB-Buddy-Arc-145.jpg" "https://..."
 ```
 
 **After download, verify:**
@@ -147,7 +147,7 @@ Add or replace the `images` field in the product markdown file.
 
 ```yaml
 images:
-  - "/wp-content/uploads/2026/07/ESAB-Buddy-Arc-145.jpg"
+  - "/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
 ```
 
 Rules:
@@ -168,7 +168,7 @@ description: "..."
 brand: "ESAB"
 category: "standard-equipment/mma-welding-equipment/esab"
 images:
-  - "/wp-content/uploads/2026/07/ESAB-Buddy-Arc-145.jpg"
+  - "/images/products/2026/07/ESAB-Buddy-Arc-145.jpg"
 ---
 ```
 
@@ -176,7 +176,7 @@ images:
 
 ### Step 6: Validate
 
-1. Confirm the file exists at `public/wp-content/uploads/...`
+1. Confirm the file exists at `public/images/products/...`
 2. Visually inspect the image (Read tool supports images) — confirm it is product photography, not an action shot
 3. Run `npm run build` if available to ensure the content schema accepts the frontmatter
 4. Report to the user: source URL, saved path, dimensions, and brand attribution
@@ -238,7 +238,7 @@ Before marking complete, confirm:
 
 - [ ] Image is **product photography**, not an action/lifestyle shot
 - [ ] Image is from an **official or authorized** source
-- [ ] Saved under `public/wp-content/uploads/{YYYY}/{MM}/`
+- [ ] Saved under `public/images/products/{YYYY}/{MM}/`
 - [ ] Filename follows `{Brand}-{Product-Name}.{ext}` convention
 - [ ] Product markdown updated with `images:` site-root path
 - [ ] Image verified readable and meets minimum dimensions
@@ -251,7 +251,8 @@ Before marking complete, confirm:
 |------|---------|
 | `src/content/products/*.md` | Product content with `images:` frontmatter |
 | `src/layouts/ProductLayout.astro` | Renders `images[0]` as primary product image |
-| `public/wp-content/uploads/` | Static image assets served by Astro |
+| `public/images/products/` | Product photography assets served by Astro |
+| `agents.md` | Repo-wide agent conventions including image path rules |
 | `BROKEN-ASSETS.md` | List of URLs that failed Wayback recovery |
 | `scripts/remove-unreachable-product-images.py` | Strips broken `images:` entries |
 
@@ -262,6 +263,6 @@ Before marking complete, confirm:
 1. Read product → identify `title`, `brand`, `slug`
 2. Search brand site → product page → hero/gallery image
 3. Reject action photos → accept studio/catalog shots
-4. Download highest resolution → `public/wp-content/uploads/{YYYY}/{MM}/{Brand}-{Product}.{ext}`
+4. Download highest resolution → `public/images/products/{YYYY}/{MM}/{Brand}-{Product}.{ext}`
 5. Update `images:` in product markdown
 6. Verify image visually and build

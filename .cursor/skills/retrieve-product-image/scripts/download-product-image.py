@@ -98,7 +98,7 @@ def main() -> int:
     parser.add_argument(
         "--output",
         required=True,
-        help="Destination path relative to repo root (e.g. public/wp-content/uploads/2026/07/ESAB-Buddy-Arc-145.jpg)",
+        help="Destination path relative to repo root (e.g. public/images/products/2026/07/ESAB-Buddy-Arc-145.jpg)",
     )
     parser.add_argument("--min-width", type=int, default=400, help="Minimum image width (default: 400)")
     parser.add_argument("--min-height", type=int, default=400, help="Minimum image height (default: 400)")
