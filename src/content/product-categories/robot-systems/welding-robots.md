@@ -1,0 +1,28 @@
+---
+title: "Welding Robots"
+slug: "robot-systems/welding-robots"
+layout: category
+parent: "robot-systems"
+products:
+  - slug: "fd-b6"
+    title: "Fd B6"
+    image: "/wp-content/uploads/2020/10/FD-B6-300x300.png"
+  - slug: "fd-v8"
+    title: "Fd V8"
+    image: "/wp-content/uploads/2020/10/FD-V8-300x300.png"
+  - slug: "fd-b6l"
+    title: "Fd B6L"
+    image: "/wp-content/uploads/2020/10/FD-B6L-300x300.png"
+  - slug: "fd-v8l-2"
+    title: "Fd V8L 2"
+    image: "/wp-content/uploads/2020/10/FD-V8L-300x300.png"
+  - slug: "fd-v6s-7-axis"
+    title: "Fd V6S 7 Axis"
+    image: "/wp-content/uploads/2020/10/FD-V6Sjpg-300x300.jpg"
+  - slug: "fd-a20"
+    title: "Fd A20"
+    image: "/wp-content/uploads/2020/10/FD-A20-300x300.jpg"
+  - slug: "synchro-feed"
+    title: "Synchro Feed"
+    image: "/wp-content/uploads/2020/10/SynchroFeed-300x300.jpg"
+---

@@ -1,0 +1,12 @@
+---
+title: "MONOGYS 200-4CS"
+slug: "monogys-200-4cs"
+layout: product
+description: "DOWNLOAD PRODUCT CATALOGUE The MONOGYS 200-4CS is a traditional sing le-phase MIG/MAG generator (200 A) with synergic settings. It incorporates a bank of capacitors dedicated to current smoothing in order to reduce welding spatter. It’s precise 4-roller unwinding system ensures welding quality is outstanding, even in aluminum."
+brand: "GYS"
+images:
+- "/wp-content/uploads/2023/02/065949.jpg"
+- "/wp-content/uploads/2023/02/065949_secondary_1.jpg"
+---
+
+<p>The MONOGYS 200-4CS is a traditional single-phase MIG/MAG generator (200 A) with synergic settings. It incorporates a bank of capacitors dedicated to current smoothing in order to reduce welding spatter. It’s precise 4-roller unwinding system ensures welding quality is outstanding, even in aluminum.<p><strong>MIG/MAG Welding</strong><ul><li>Steel and Stainless Steel wire: Ø 0.6 to 1.0 mm<li>Aluminum wire: Ø 0.8 and 1.0 mm<li>CuSi and CuAl wire: Ø 0.8 and 1.0 mm</ul><p><strong>2 Spot Welding Modes</strong><ul><li>Spot: adjustment of the welding point diameter<li>Delay (chain spot): adjustment of the time delay between spots</ul><p><strong>Intelligent</strong><ul><li>There is a simple table on the face of the unit for suggested adjustments of the 6-position switch.<li><strong>Synergic mode</strong>: after entering 3 pieces of information; (Wire diameter, type of wire, and welding power depending on the thickness of the material), the product automatically determines the optimal wire feed speed with the possibility of adjusting it.<li>The unit memorizes the last settings each time the product is switched off.</ul><p><strong>Integrated Reel</strong><ul><li>Compatible with wire spools: Ø 200 / 300 mm<li>4-roller motor-driven reel for efficient wire feeding.<li>European torch connector allowing quick coupling of the torch.</ul><p><strong>Robust</strong><ul><li>Traditional concept for low maintenance.<li>Reinforced wheels combining stability and maneuverability.<li>Rear shelf for gas bottles up to 4m³ (20 L).</ul>

@@ -1,0 +1,25 @@
+---
+title: "Orbital Welding Machines"
+slug: "tube-and-pipe-cutting-and-welding-solutions/orbital-welding-machines"
+layout: category
+parent: "tube-and-pipe-cutting-and-welding-solutions"
+products:
+  - slug: "axxair-orbital-welding-machines"
+    title: "Axxair Orbital Welding Machines"
+    image: "/wp-content/uploads/2020/10/Axxair-Orbital-Welding-300x300.png"
+  - slug: "prefabrication-orbital-welding"
+    title: "Prefabrication Orbital Welding"
+    image: "/wp-content/uploads/2020/10/SX172-300x300.jpg"
+  - slug: "sx122-172-222-322-simple-wire"
+    title: "Sx122 172 222 322 Simple Wire"
+    image: "/wp-content/uploads/2020/10/SX122-300x300.jpg"
+  - slug: "sx122-172-222-322-avc-osc"
+    title: "Sx122 172 222 322 Avc Osc"
+    image: "/wp-content/uploads/2020/10/AVC_OSC-300x300.jpg"
+  - slug: "open-head-orbital-welding"
+    title: "Open Head Orbital Welding"
+    image: "/wp-content/uploads/2020/10/SATO-115-300x300.jpg"
+  - slug: "closed-head-orbital-welding"
+    title: "Closed Head Orbital Welding"
+    image: "/wp-content/uploads/2020/10/SATF-40NDHX-300x300.jpg"
+---

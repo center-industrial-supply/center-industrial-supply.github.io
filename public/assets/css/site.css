@@ -839,6 +839,80 @@ h1, h2, h3, h4 {
   font-size: 0.95rem;
 }
 
+/* Product detail */
+.cisc-product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.cisc-product-detail__gallery {
+  display: grid;
+  gap: 1rem;
+}
+
+.cisc-product-detail__gallery img,
+.cisc-product-detail__placeholder img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid #d8dde2;
+  background: var(--cisc-white);
+}
+
+.cisc-product-detail__brand {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cisc-teal);
+  margin-bottom: 0.5rem;
+}
+
+.cisc-product-detail__summary h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.cisc-product-detail__lead {
+  color: var(--cisc-steel);
+  margin-bottom: 1.5rem;
+}
+
+.cisc-product-detail__actions {
+  margin-bottom: 1.5rem;
+}
+
+.cisc-product-detail__meta {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  font-size: 0.95rem;
+}
+
+.cisc-product-detail__meta dt {
+  font-weight: 600;
+  color: var(--cisc-navy);
+}
+
+.cisc-category-section__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.cisc-category-section + .cisc-category-section {
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .cisc-product-detail {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Responsive */
 @media (max-width: 960px) {
   .cisc-stats__grid {

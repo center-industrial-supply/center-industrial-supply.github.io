@@ -1,0 +1,11 @@
+---
+title: "Eco Clear Spectacles"
+slug: "esab-eye-wear-eco-clear-spectacles"
+layout: product
+description: "These stylish spectacles are used for drilling, chipping, and metalworking. They have a sporty style and are extremely lightweight. They are also available in three different lens configurations. These spectacles are CE approved according to EN 166-F. Variations: ESAB Eco Clear ESAB Eco Smoked ESAB Eco Amber"
+brand: "ESAB"
+images:
+- "/wp-content/uploads/2023/07/ESAB-ECO-Clear.png"
+---
+
+<p>These stylish spectacles are used for drilling, chipping, and metalworking. They have a sporty style and are extremely lightweight. They are also available in three different lens configurations. These spectacles are CE approved according to EN 166-F.

@@ -1,0 +1,11 @@
+---
+title: "FD-B6 ARC WELDING ROBOT"
+slug: "fd-b6"
+layout: product
+description: "DOWNLOAD PRODUCT CATALOG The OTC FD-B6 is a 6-axis arc welding robot that utilizes a streamlined, through-arm coaxial cable, giving maximum flexibility in tight work spaces or complicated fixtures."
+brand: "OTC"
+images:
+- "/wp-content/uploads/2020/10/FD-B6.png"
+---
+
+<p><strong>FD-B6 ARC WELDING ROBOT</strong><p><span style="font-weight: 400;">The OTC FD-B6 is a 6-axis arc welding robot that utilizes a streamlined, through-arm coaxial cable, giving maximum flexibility in tight work spaces or complicated fixtures. Simple and slim design, it achieves high speed motion for increased productivity and superior welding performance.</span><p> <ul><li style="font-weight: 400;"><span style="font-weight: 400;">Through-arm cable design improves torch reach and wire feeding</span><li style="font-weight: 400;"><span style="font-weight: 400;">6-kg payload</span><li style="font-weight: 400;"><span style="font-weight: 400;">1.4m wide working radius with an independently articulated arm</span><li style="font-weight: 400;"><span style="font-weight: 400;">Seamless digital connection with all OTC DAIHEN welding power sources</span><li style="font-weight: 400;"><span style="font-weight: 400;">Improved vibration restraining control provides smooth robot movement</span><li style="font-weight: 400;"><span style="font-weight: 400;">Built-in shock sensor</span><li style="font-weight: 400;"><span style="font-weight: 400;">Single source technology – all components are manufactured by OTC DAIHEN</span><li style="font-weight: 400;"><span style="font-weight: 400;">Versatile design supports most welding applications</span><li style="font-weight: 400;"><span style="font-weight: 400;">FD11 Robot Controller with Windows XP based open architecture with large memory capacity and 40 Input/40 Output signals</span><li style="font-weight: 400;"><span style="font-weight: 400;">Teach Pendant with icon displays assist in quick and easy teaching. 640×480 VAGa color screen with LED backlight. Touch screen display with jog dial operation. </span></ul>

@@ -5,10 +5,9 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title: string;
   description: string;
-  legacy?: boolean;
 }
 
-const { title, description, legacy = false } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -26,14 +25,12 @@ const { title, description, legacy = false } = Astro.props;
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/assets/css/site.css" />
-    {legacy && <link rel="stylesheet" href="/assets/css/legacy.css" />}
     <link rel="icon" href="/wp-content/uploads/2020/10/small-brand-logo-1024x194.png" />
-    {legacy && <script is:inline defer src="/assets/js/layout.js"></script>}
   </head>
-  <body class:list={["cisc-body", legacy && "cisc-legacy"]}>
-  {!legacy && <Header />}
+  <body class="cisc-body">
+    <Header />
     <slot />
-  {!legacy && <Footer />}
+    <Footer />
     <script is:inline src="/assets/js/site.js"></script>
   </body>
 </html>

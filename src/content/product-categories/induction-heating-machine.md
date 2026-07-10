@@ -1,0 +1,25 @@
+---
+title: "Induction Heating Machine"
+slug: "induction-heating-machine"
+layout: category
+description: "Induction Heating Machines"
+products:
+  - slug: "powerduction-10r"
+    title: "Powerduction 10R"
+    image: "/wp-content/uploads/2023/05/062504.jpg"
+  - slug: "powerduction-110lg"
+    title: "Powerduction 110Lg"
+    image: "/wp-content/uploads/2023/05/058590.jpg"
+  - slug: "powerduction-160lg"
+    title: "Powerduction 160Lg"
+    image: "/wp-content/uploads/2023/05/057814.jpg"
+  - slug: "powerduction-220lg"
+    title: "Powerduction 220Lg"
+    image: "/wp-content/uploads/2023/05/066861.jpg"
+  - slug: "powerduction-37lg"
+    title: "Powerduction 37Lg"
+    image: "/wp-content/uploads/2023/05/056992.jpg"
+  - slug: "powerduction-50lg"
+    title: "Powerduction 50Lg"
+    image: "/wp-content/uploads/2023/05/055599.jpg"
+---

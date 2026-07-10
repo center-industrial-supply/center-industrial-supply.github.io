@@ -1,0 +1,11 @@
+---
+title: "FD-V8 ARC WELDING ROBOT"
+slug: "fd-v8"
+layout: product
+description: "DOWNLOAD PRODUCT CATALOG The OTC FD-V8 is a versatile 6-axis arc welding robot. Suitable for arc welding, TIG welding and plasma arc cutting applications."
+brand: "OTC"
+images:
+- "/wp-content/uploads/2020/10/FD-V8.png"
+---
+
+<p><strong>FD-V8 ARC WELDING ROBOT</strong><p><span style="font-weight: 400;">The OTC FD-V8 is a versatile 6-axis arc welding robot. Suitable for arc welding, TIG welding and plasma arc cutting applications. Highest motion speed in its class for increased productivity and superior welding performance.</span><p> <ul><li style="font-weight: 400;"><span style="font-weight: 400;">8-kg payload</span><li style="font-weight: 400;"><span style="font-weight: 400;">1.4 wide working radius with an independently articulated arm</span><li style="font-weight: 400;"><span style="font-weight: 400;">Seamless digital connection with all OTC DAIHEN welding power sources</span><li style="font-weight: 400;"><span style="font-weight: 400;">Improved vibration restraining control provides smooth robot movement</span><li style="font-weight: 400;"><span style="font-weight: 400;">Built-in shock sensor</span><li style="font-weight: 400;"><span style="font-weight: 400;">Single source technology – all components are manufactured by OTC DAIHEN</span><li style="font-weight: 400;"><span style="font-weight: 400;">Versatile design supports most welding applications</span><li style="font-weight: 400;"><span style="font-weight: 400;">FD11 Robot Controller with Windows XP based open architecture with large memory capacity and 40 Input/40 Output signals</span><li style="font-weight: 400;"><span style="font-weight: 400;">Teach Pendant with icon displays assist in quick and easy teaching. 640×480 VAGa color screen with LED backlight. Touch screen display with jog dial operation. </span></ul>
