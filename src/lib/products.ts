@@ -22,6 +22,12 @@ export async function getProductImageMap(): Promise<Map<string, string>> {
   );
 }
 
+export async function getProductTitleMap(): Promise<Map<string, string>> {
+  const products = await getCollection("products");
+
+  return new Map(products.map((product) => [product.data.slug, product.data.title]));
+}
+
 function toProductSummary(product: CollectionEntry<"products">): ProductSummary {
   return {
     name: product.data.title,

@@ -1,5 +1,5 @@
 ---
-title: "Caddy Mig C200i"
+title: "CADDY MIG C200i"
 slug: "caddy-mig-c200i"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Portable MIG/MAG welding unit with built-in wire feeder for Ø200 mm spools. For tradesmen – repair, maintenance and assembly welding of mild steels, aluminium and stainless steels as well as brazing."

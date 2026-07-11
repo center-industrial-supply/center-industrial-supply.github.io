@@ -1,5 +1,5 @@
 ---
-title: "Tig200P"
+title: "TIG 200P"
 slug: "tig200p"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG TIG-P series is portable DC Pulse TIG models with soft switch inverter technology."

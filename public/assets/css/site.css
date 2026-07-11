@@ -119,6 +119,7 @@ h1, h2, h3, h4 {
 .cisc-logo img {
   height: 42px;
   width: auto;
+  object-fit: contain;
 }
 
 .cisc-nav {
@@ -678,6 +679,23 @@ h1, h2, h3, h4 {
   object-fit: cover;
 }
 
+.cisc-split__image--logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cisc-silver);
+  padding: 2rem;
+  min-height: 200px;
+}
+
+.cisc-split__image--logo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
 /* Page header (inner pages) */
 .cisc-page-header {
   background: linear-gradient(135deg, var(--cisc-navy) 0%, #034555 100%);
@@ -712,6 +730,11 @@ h1, h2, h3, h4 {
 
 .cisc-prose p {
   margin: 0 0 1.25rem;
+}
+
+.cisc-prose img {
+  max-width: 100%;
+  height: auto;
 }
 
 .cisc-prose h2 {
@@ -932,6 +955,8 @@ h1, h2, h3, h4 {
 
 .cisc-footer__logo img {
   height: 48px;
+  width: auto;
+  object-fit: contain;
   margin-bottom: 1rem;
   filter: brightness(0) invert(1);
 }

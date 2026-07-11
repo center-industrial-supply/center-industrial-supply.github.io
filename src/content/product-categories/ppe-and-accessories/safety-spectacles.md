@@ -9,7 +9,7 @@ products:
     title: "Eco Amber Spectacles"
     image: "/wp-content/uploads/2023/07/eyeglasses-yellow-eco-amber-esab.jpg"
   - slug: "esab-eye-wear-eco-clear-spectacles"
-    title: "Esab Eye Wear Eco Clear Spectacles"
+    title: "Eco Clear Spectacles"
     image: "/wp-content/uploads/2023/07/ESAB-ECO-Clear.png"
   - slug: "warrior-amber-spectacles"
     title: "Warrior Amber Spectacles"
@@ -21,6 +21,6 @@ products:
     title: "Warrior Shade 5 Spectacles"
     image: "/wp-content/uploads/2023/06/warrior-5.jpg"
   - slug: "warrior-spectacles"
-    title: "Warrior Spectacles"
+    title: "Warrior Smoked Spectacles"
     image: "/wp-content/uploads/2023/06/4152-1540990618-0.jpg"
 ---

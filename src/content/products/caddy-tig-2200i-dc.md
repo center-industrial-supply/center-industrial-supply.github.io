@@ -1,5 +1,5 @@
 ---
-title: "Caddy Tig 2200i DC"
+title: "Caddy TIG 2200i DC"
 slug: "caddy-tig-2200i-dc"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Compact and portable inverter for advanced TIG welding, with HF or Lift-Arc™ start, and MMA."

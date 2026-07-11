@@ -45,7 +45,7 @@ def extract_title(page_html: str, fallback: str) -> str:
             title = re.sub(r"\s*-\s*Center Industrial Supply.*$", "", title, flags=re.IGNORECASE)
             if title:
                 return title
-    return fallback.replace("-", " ").title()
+    return fallback.replace("-", " ")
 
 
 def extract_meta_description(page_html: str) -> str:
@@ -183,7 +183,7 @@ def extract_category_children(page_html: str, base_slug: str) -> tuple[list[dict
         href = link.group(1).replace("index.html", "").strip("/")
         slug = href.split("/")[-1] if href else ""
         title_match = re.search(r"<h2[^>]*>(.*?)</h2>", chunk, re.IGNORECASE | re.DOTALL)
-        title = clean_text(re.sub(r"<[^>]+>", "", title_match.group(1))) if title_match else slug.replace("-", " ").title()
+        title = clean_text(re.sub(r"<[^>]+>", "", title_match.group(1))) if title_match else slug.replace("-", " ")
         title = re.sub(r"\s*\(\d+\)\s*$", "", title)
         img_match = re.search(r"<img[^>]+src=([^ >]+)", chunk, re.IGNORECASE)
         image = normalize_asset_path(img_match.group(1)) if img_match else ""

@@ -21,6 +21,6 @@ subcategories:
     title: "Plasma Arc Cutting Equipment"
     image: "/images/categories/subcategories/plasma-arc-cutting-equipment.jpg"
   - slug: "tig-welding-equipment"
-    title: "Tig Welding Equipment"
+    title: "TIG Welding Equipment"
     image: "/images/categories/subcategories/tig-welding-equipment.jpg"
 ---
