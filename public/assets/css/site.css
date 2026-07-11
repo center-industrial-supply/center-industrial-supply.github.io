@@ -485,7 +485,125 @@ h1, h2, h3, h4 {
   letter-spacing: 0.05em;
 }
 
-/* Brand strip */
+/* Brand grid (homepage) */
+.cisc-brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.cisc-brand-card {
+  background: var(--cisc-white);
+  border: 1px solid #d8dde2;
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cisc-brand-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--cisc-teal);
+  transform: translateY(-2px);
+  color: inherit;
+}
+
+.cisc-brand-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 64px;
+}
+
+.cisc-brand-card__logo img {
+  max-width: 100%;
+  max-height: 56px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cisc-brand-card__name {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cisc-steel);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Brand detail page */
+.cisc-brand-hero {
+  display: grid;
+  grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-bottom: 3rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #d8dde2;
+}
+
+.cisc-brand-hero__logo {
+  background: var(--cisc-white);
+  border: 1px solid #d8dde2;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cisc-brand-hero__logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.cisc-brand-hero__copy p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--cisc-steel);
+}
+
+.cisc-brand-products__header {
+  margin-bottom: 1.5rem;
+}
+
+.cisc-brand-products__header h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+}
+
+.cisc-brand-products__header p {
+  margin: 0;
+  color: var(--cisc-steel);
+  font-size: 0.95rem;
+}
+
+.cisc-brand-empty {
+  padding: 2rem;
+  background: var(--cisc-white);
+  border: 1px solid #d8dde2;
+  border-radius: var(--radius);
+  color: var(--cisc-steel);
+}
+
+@media (max-width: 768px) {
+  .cisc-brand-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Legacy brand pills (kept for reference) */
 .cisc-brands {
   display: flex;
   flex-wrap: wrap;
