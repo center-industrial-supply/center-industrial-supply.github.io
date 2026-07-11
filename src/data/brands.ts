@@ -43,7 +43,7 @@ export const brands: Brand[] = [
   {
     name: "AMG",
     slug: "amg",
-    logo: "/images/brands/amg.svg",
+    logo: "/images/brands/amg.png",
     tagline: "Heavy-duty plate processing machinery",
     description:
       "AMG builds large-format equipment for plate cutting, beveling, and drilling used in structural steel and pressure-vessel fabrication. Their machines are engineered for high throughput on thick plate and long production runs. CISC connects Philippine heavy-industry customers with AMG solutions for automated plate preparation and CNC profiling workflows.",

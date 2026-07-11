@@ -26,12 +26,15 @@ SOURCES: dict[str, tuple[str, str]] = {
         "https://www.hypertherm.com/globalassets/ha/logo_ht-technology-400.png",
         "hypertherm.png",
     ),
-    "amg": ("https://cdn.worldvectorlogo.com/logos/amg.svg", "amg.svg"),
+    "amg": (
+        "https://www.asiacnc.com.tw/themes/asiacnc/images/logo.png",
+        "amg.png",
+    ),
     "aotai": (
         "https://usimg.bjyyb.net/sites/62500/62761/20210619110125174.png",
         "aotai.png",
     ),
-    "kjellberg": ("https://www.kjellberg.com/LOGOMIC.jpg", "kjellberg.jpg"),
+    "kjellberg": ("https://www.kjellberg.com/LOGOKJELLBERG.jpg", "kjellberg.jpg"),
     "mosa": (
         "https://www.mosa.com/packages/mosa_site/themes/mosa_theme/e04/shared_assets/img/logo.svg",
         "mosa.svg",
@@ -53,29 +56,33 @@ SOURCES: dict[str, tuple[str, str]] = {
 }
 
 
-def curl(url: str, dest: Path) -> None:
+def curl(url: str, dest: Path, referer: str | None = None) -> None:
     dest.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(
-        ["curl", "-fsSL", "-A", UA, "--max-time", "45", "-o", str(dest), url],
-        check=True,
-    )
+    cmd = ["curl", "-fsSL", "-A", UA, "--max-time", "45"]
+    if referer:
+        cmd.extend(["-H", f"Referer: {referer}"])
+    cmd.extend(["-o", str(dest), url])
+    subprocess.run(cmd, check=True)
 
 
 def extract_otc_logo(src: Path, dest: Path) -> None:
     import re
 
     text = src.read_text(encoding="utf-8", errors="replace")
-    match = re.search(
-        r'<symbol[^>]*id="otc-logo"[^>]*viewBox="([^"]*)"[^>]*>(.*?)</symbol>',
+    tag_match = re.search(r'<symbol[^>]*id="otc-logo"[^>]*>', text)
+    content_match = re.search(
+        r'<symbol[^>]*id="otc-logo"[^>]*>(.*?)</symbol>',
         text,
         re.S,
     )
-    if not match:
-        match = re.search(r'<symbol[^>]*id="otc-logo"[^>]*>(.*?)</symbol>', text, re.S)
-        viewbox = "0 0 200 60"
-        content = match.group(1) if match else ""
-    else:
-        viewbox, content = match.group(1), match.group(2)
+    viewbox = "0 0 363.3 159.5"
+    content = ""
+    if tag_match:
+        viewbox_match = re.search(r'viewBox="([^"]*)"', tag_match.group(0))
+        if viewbox_match:
+            viewbox = viewbox_match.group(1)
+    if content_match:
+        content = content_match.group(1)
     dest.write_text(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}">{content}</svg>\n',
         encoding="utf-8",
@@ -110,7 +117,8 @@ def main() -> None:
     for slug, (url, filename) in SOURCES.items():
         raw = TMP / filename
         print(f"Fetching {slug} …")
-        curl(url, raw)
+        referer = "https://www.asiacnc.com.tw/" if slug == "amg" else None
+        curl(url, raw, referer=referer)
 
         if slug == "otc":
             out = OUT / "otc.svg"
