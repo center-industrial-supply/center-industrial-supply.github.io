@@ -4,6 +4,8 @@ slug: "caddy-tig-2200i-dc"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Compact and portable inverter for advanced TIG welding, with HF or Lift-Arc™ start, and MMA."
 brand: "ESAB"
+images:
+  - "/images/products/caddy-tig-2200i-dc/ESAB-Caddy-Tig-2200i-DC.jpg"
 category: "standard-equipment/tig-welding-equipment/esab-tig-welding-equipment"
 ---
 

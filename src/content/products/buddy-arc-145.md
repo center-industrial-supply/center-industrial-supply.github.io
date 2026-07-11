@@ -4,6 +4,8 @@ slug: "buddy-arc-145"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The Buddy™ Arc 145 is a robust and durable power source for the professional welder."
 brand: "ESAB"
+images:
+  - "/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
 category: "standard-equipment/mma-welding-equipment/esab"
 ---
 

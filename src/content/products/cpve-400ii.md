@@ -4,6 +4,8 @@ slug: "cpve-400ii"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Full Digital Inverter CO 2 /MAG Welding Machine"
 brand: "OTC"
+images:
+  - "/images/products/cpve-400ii/OTC-CPVE-400II.jpg"
 category: "standard-equipment/mig-mag-welding-equipment/otc-mig-fcaw-welding-equipment"
 ---
 

@@ -4,6 +4,8 @@ slug: "a-series"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The A-Series systems are based on an industrial proven platform."
 brand: "ESAB"
+images:
+  - "/images/products/a-series/ESAB-A-Series.jpg"
 category: "standard-equipment/plasma-arc-cutting-equipment/esab-plasma-arc-cutting-equipment"
 ---
 

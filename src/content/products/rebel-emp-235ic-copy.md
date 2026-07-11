@@ -4,6 +4,8 @@ slug: "rebel-emp-235ic-copy"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Introducing Rebel EMP 235ic – the next level Rebel welding machine that offers TRUE multi-process performance in a portable package."
 brand: "ESAB"
+images:
+  - "/images/products/rebel-emp-235ic-copy/ESAB-Rebel-EMP-235ic.jpg"
 category: "standard-equipment/mig-mag-welding-equipment/esab-mig-fcaw-welding-equipment"
 ---
 

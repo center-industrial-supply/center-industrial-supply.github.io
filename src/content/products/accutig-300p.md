@@ -4,6 +4,8 @@ slug: "accutig-300p"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Thyristor Control AC/DC Pulsed TIG Welding Machine ACCUTIG 300P/ 500P"
 brand: "OTC"
+images:
+  - "/images/products/accutig-300p/OTC-Accutig-300P.jpg"
 category: "standard-equipment/tig-welding-equipment/otc"
 ---
 

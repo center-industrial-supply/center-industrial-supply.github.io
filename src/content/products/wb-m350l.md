@@ -4,6 +4,8 @@ slug: "wb-m350l"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The new generation Welbee series Digital CO 2 /MAG Welding Machine"
 brand: "OTC"
+images:
+  - "/images/products/wb-m350l/OTC-WB-M350L.jpg"
 category: "standard-equipment/mig-mag-welding-equipment/otc-mig-fcaw-welding-equipment"
 ---
 
