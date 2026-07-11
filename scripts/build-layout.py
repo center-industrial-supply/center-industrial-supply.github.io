@@ -134,7 +134,7 @@ def write_homepage() -> None:
           <a class="cisc-btn cisc-btn--dark" href="{prefix}about-us/index.html">Our Story</a>
         </div>
         <div class="cisc-split__image">
-          <img src="{prefix}wp-content/uploads/2020/10/secondary-guy-industrial.jpg" alt="Welding professional at work" width="600" height="360">
+          <img src="{prefix}wp-content/uploads/2020/10/secondary-guy-industrial.jpg" alt="Welding professional at work" width="349" height="446">
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@ def write_about() -> None:
         <p>Our products provide solutions in a wide range of applications and industries: sheet metal fabrication, heavy steel fabrication, automotive, shipbuilding, offshore oil and gas, boiler, construction, cement, mining, sugar and many more.</p>
       </div>
       <div class="cisc-split__image">
-        <img src="{prefix}wp-content/uploads/2020/10/cisc-logo-full.png" alt="Center Industrial Supply Corporation" width="500" height="120" style="object-fit:contain;background:#eaedf0;padding:2rem">
+        <img src="{prefix}wp-content/uploads/2020/10/cisc-logo-full.png" alt="Center Industrial Supply Corporation" width="256" height="50">
       </div>
     </div>
 
