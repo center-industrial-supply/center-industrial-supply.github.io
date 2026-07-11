@@ -27,15 +27,31 @@ export async function getProductTitleMap(): Promise<Map<string, string>> {
   return new Map(products.map((product) => [product.data.slug, product.data.title]));
 }
 
+function toProductSummary(product: {
+  data: { title: string; slug: string; images?: string[]; brand?: string };
+}): ProductSummary {
+  return {
+    name: product.data.title,
+    href: `/product/${product.data.slug}/`,
+    image: primaryProductImage(product.data.images).replace(/^\//, ""),
+    brand: product.data.brand ?? "",
+  };
+}
+
 export async function getProducts(): Promise<ProductSummary[]> {
   const products = await getCollection("products");
 
+  return products.map(toProductSummary).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function getProductsByBrand(brandSlug: string): Promise<ProductSummary[]> {
+  const products = await getCollection("products");
+
   return products
-    .map((product) => ({
-      name: product.data.title,
-      href: `/product/${product.data.slug}/`,
-      image: primaryProductImage(product.data.images).replace(/^\//, ""),
-      brand: product.data.brand ?? "",
-    }))
+    .filter((product) => {
+      const productBrand = product.data.brand?.trim().toLowerCase() ?? "";
+      return productBrand === brandSlug;
+    })
+    .map(toProductSummary)
     .sort((a, b) => a.name.localeCompare(b.name));
 }

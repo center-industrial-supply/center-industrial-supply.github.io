@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CategoryCards from "../components/CategoryCards.astro";
+import BrandCards from "../components/BrandCards.astro";
 import { categories } from "../data/categories";
 import { brands } from "../data/brands";
 ---
@@ -94,7 +95,7 @@ import { brands } from "../data/brands";
       </div>
     </section>
 
-    <section class="cisc-section">
+    <section class="cisc-section" id="brands">
       <div class="cisc-container">
         <div class="cisc-section__header">
           <div class="cisc-section__eyebrow">Authorized Brands</div>
@@ -104,9 +105,7 @@ import { brands } from "../data/brands";
             performance.
           </p>
         </div>
-        <div class="cisc-brands">
-          {brands.map((brand) => <span class="cisc-brand">{brand}</span>)}
-        </div>
+        <BrandCards brands={brands} />
       </div>
     </section>
 

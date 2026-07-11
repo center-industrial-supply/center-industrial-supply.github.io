@@ -1,0 +1,17 @@
+---
+import BrandLayout from "../../layouts/BrandLayout.astro";
+import { brands } from "../../data/brands";
+import { getProductsByBrand } from "../../lib/products";
+
+export async function getStaticPaths() {
+  return brands.map((brand) => ({
+    params: { slug: brand.slug },
+    props: { brand },
+  }));
+}
+
+const { brand } = Astro.props;
+const products = await getProductsByBrand(brand.slug);
+---
+
+<BrandLayout brand={brand} products={products} />
