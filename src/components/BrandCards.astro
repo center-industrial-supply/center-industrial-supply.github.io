@@ -1,0 +1,22 @@
+---
+import type { Brand } from "../data/brands";
+
+interface Props {
+  brands: Brand[];
+}
+
+const { brands } = Astro.props;
+---
+
+<div class="cisc-brand-grid">
+  {
+    brands.map((brand) => (
+      <a class="cisc-brand-card" href={`/brand/${brand.slug}/`} title={brand.name}>
+        <div class="cisc-brand-card__logo">
+          <img src={brand.logo} alt={`${brand.name} logo`} loading="lazy" width="240" height="80" />
+        </div>
+        <span class="cisc-brand-card__name">{brand.name}</span>
+      </a>
+    ))
+  }
+</div>

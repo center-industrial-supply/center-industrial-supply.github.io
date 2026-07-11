@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import BrandCards from "../components/BrandCards.astro";
 import CategoryCards from "../components/CategoryCards.astro";
 import { categories } from "../data/categories";
 import { brands } from "../data/brands";
@@ -94,19 +95,17 @@ import { brands } from "../data/brands";
       </div>
     </section>
 
-    <section class="cisc-section">
+    <section class="cisc-section" id="brands">
       <div class="cisc-container">
         <div class="cisc-section__header">
           <div class="cisc-section__eyebrow">Authorized Brands</div>
           <h2>World-Class Manufacturers</h2>
           <p>
             We partner with industry-leading brands to bring you proven technology and reliable
-            performance.
+            performance. Select a brand to learn more and browse available products.
           </p>
         </div>
-        <div class="cisc-brands">
-          {brands.map((brand) => <span class="cisc-brand">{brand}</span>)}
-        </div>
+        <BrandCards brands={brands} />
       </div>
     </section>
 
