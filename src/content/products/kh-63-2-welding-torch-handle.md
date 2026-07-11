@@ -4,6 +4,8 @@ slug: "kh-63-2-welding-torch-handle"
 layout: product
 description: "Cuts up to 150mm, Welds up to 50mm"
 brand: "Wilson"
+images:
+  - "/images/products/kh-63-2-welding-torch-handle/Wilson-KH-63-2-Welding-Torch-Handle-Heavy-Duty-UL-Listed-EN-ISO-5172.jpg"
 category: "standard-equipment/gas-welding-and-cutting-apparatus/wilson"
 ---
 

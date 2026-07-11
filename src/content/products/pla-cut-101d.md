@@ -4,6 +4,8 @@ slug: "pla-cut-101d"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The PLA-CUT 101D is quite compact & energy efficient and find applications in small workshop, large factories or even in open field site. Comes standard with manual cutting torch."
 brand: "Taiwan Plasma"
+images:
+  - "/images/products/pla-cut-101d/Taiwan-Plasma-Pla-Cut-101D.jpg"
 category: "standard-equipment/plasma-arc-cutting-equipment/taiwan-plasma"
 ---
 

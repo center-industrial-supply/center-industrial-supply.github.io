@@ -4,6 +4,8 @@ slug: "dayok-ok-iv300d"
 layout: product
 description: "The Dayok OK-IV300D is a D.C arc inverter welding machine."
 brand: "Dayok"
+images:
+  - "/images/products/dayok-ok-iv300d/Dayok-DAYOK-OK-IV300D.jpg"
 category: "standard-equipment/mma-welding-equipment"
 ---
 

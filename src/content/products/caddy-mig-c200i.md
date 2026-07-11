@@ -4,6 +4,8 @@ slug: "caddy-mig-c200i"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Portable MIG/MAG welding unit with built-in wire feeder for Ø200 mm spools. For tradesmen – repair, maintenance and assembly welding of mild steels, aluminium and stainless steels as well as brazing."
 brand: "ESAB"
+images:
+  - "/images/products/caddy-mig-c200i/ESAB-Caddy-Mig-C200i.jpg"
 category: "standard-equipment/mig-mag-welding-equipment/esab-mig-fcaw-welding-equipment"
 ---
 

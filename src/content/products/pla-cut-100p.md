@@ -4,6 +4,8 @@ slug: "pla-cut-100p"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The PLA-CUT 100P is quite compact & energy efficient and find applications in small workshop, large factories or even in open field site."
 brand: "Taiwan Plasma"
+images:
+  - "/images/products/pla-cut-100p/Taiwan-Plasma-Pla-Cut-100P.jpg"
 category: "standard-equipment/plasma-arc-cutting-equipment/taiwan-plasma"
 ---
 

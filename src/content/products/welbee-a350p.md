@@ -4,6 +4,8 @@ slug: "welbee-a350p"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The WELBEE WB-A350P is the ultimate TIG welding machine for both thin to thick plate welding applications."
 brand: "OTC"
+images:
+  - "/images/products/welbee-a350p/OTC-Welbee-A350P.jpg"
 category: "standard-equipment/tig-welding-equipment/otc"
 ---
 

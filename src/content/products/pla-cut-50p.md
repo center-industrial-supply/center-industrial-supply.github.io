@@ -4,6 +4,8 @@ slug: "pla-cut-50p"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The PLA-CUT 50P is a professional compact plasma cutting machine for thinner sheet metal cutting."
 brand: "Taiwan Plasma"
+images:
+  - "/images/products/pla-cut-50p/Taiwan-Plasma-Pla-Cut-50P.jpg"
 category: "standard-equipment/plasma-arc-cutting-equipment/taiwan-plasma"
 ---
 

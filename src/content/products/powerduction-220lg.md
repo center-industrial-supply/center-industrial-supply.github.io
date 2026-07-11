@@ -4,6 +4,8 @@ slug: "powerduction-220lg"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOGUE HERE POWERDUCTION 220LG supplies an instant heating power to unseize and to heat up steel or aluminum. The Powerduction is flameless which makes its heating accurate, instantaneous, and safe for the working environment. Thanks to its liquid cooling, it can work continuously at its maximum power of 22kW. Designed for intensive use on 32 A sockets, its productivity and heating quality makes it an indispensable ally in industrial environments."
 brand: "GYS"
+images:
+  - "/images/products/powerduction-220lg/GYS-Powerduction-220LG.png"
 category: "induction-heating-machine"
 ---
 

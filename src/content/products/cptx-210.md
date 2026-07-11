@@ -4,6 +4,8 @@ slug: "cptx-210"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Single phase light industrial welding machine"
 brand: "OTC"
+images:
+  - "/images/products/cptx-210/OTC-CPTX-210.jpg"
 category: "standard-equipment/mig-mag-welding-equipment/otc-mig-fcaw-welding-equipment"
 ---
 

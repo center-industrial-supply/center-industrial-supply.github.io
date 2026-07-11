@@ -4,6 +4,8 @@ slug: "caddy-tig-2200i-ac-dc"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The Caddy™ is already a classic power source in the mobile welding equipment field."
 brand: "ESAB"
+images:
+  - "/images/products/caddy-tig-2200i-ac-dc/ESAB-Caddy-Tig-2200i-AC-DC.jpg"
 category: "standard-equipment/tig-welding-equipment/esab-tig-welding-equipment"
 ---
 

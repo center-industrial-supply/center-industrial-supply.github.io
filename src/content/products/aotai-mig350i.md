@@ -4,6 +4,8 @@ slug: "aotai-mig350i"
 layout: product
 description: "Aotai MIG series is a specially designed analog MIG machine for steel welding. All important MIG features like burnback and creep start is already included in this power source."
 brand: "Aotai"
+images:
+  - "/images/products/aotai-mig350i/Aotai-Aotai-MIG350i.png"
 category: "standard-equipment/mig-mag-welding-equipment"
 ---
 

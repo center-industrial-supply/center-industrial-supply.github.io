@@ -4,6 +4,8 @@ slug: "renegade-es-300i"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Renegade ES 300i is an inverter based MMA/Stick and LiveTIG machine with extreme power to weight ratio."
 brand: "ESAB"
+images:
+  - "/images/products/renegade-es-300i/ESAB-Renegade-ES-300i.jpg"
 category: "standard-equipment/mma-welding-equipment/esab"
 ---
 

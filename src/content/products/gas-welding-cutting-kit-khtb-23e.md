@@ -4,6 +4,8 @@ slug: "gas-welding-cutting-kit-khtb-23e"
 layout: product
 description: "This welding and cutting kit is a convenient carrying and storing outfit."
 brand: "Wilson"
+images:
+  - "/images/products/gas-welding-cutting-kit-khtb-23e/Wilson-Gas-Welding-Cutting-Kit-KHTB-23E.jpg"
 category: "standard-equipment/gas-welding-and-cutting-apparatus/wilson"
 ---
 
