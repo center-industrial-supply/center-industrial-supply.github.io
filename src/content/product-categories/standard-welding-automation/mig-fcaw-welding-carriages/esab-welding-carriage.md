@@ -5,7 +5,7 @@ layout: category
 parent: "standard-welding-automation/mig-fcaw-welding-carriages"
 products:
   - slug: "miggytrac-b501"
-    title: "Miggytrac B501"
+    title: "MIGGYTRAC B501"
     image: "/wp-content/uploads/2020/10/Miggytrac-B501-300x300.jpg"
   - slug: "pipeweld-orbiter"
     title: "Pipeweld Orbiter"

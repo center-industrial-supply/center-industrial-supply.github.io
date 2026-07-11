@@ -5,12 +5,12 @@ layout: category
 image: "/images/categories/stud-welding-equipment.jpg"
 products:
   - slug: "shear-stud-welder-st2500"
-    title: "Shear Stud Welder St2500"
+    title: "IKING ST Series Shear Stud Welding Machine"
     image: "/wp-content/uploads/2020/10/ST2500-300x300.jpg"
   - slug: "iking-rsr-series-cd-capacitor-discharge-stud-welding-machine"
-    title: "Iking Rsr Series Cd Capacitor Discharge Stud Welding Machine"
+    title: "IKING RSR Series CD Capacitor Discharge Stud Welding Machine"
     image: "/wp-content/uploads/2020/10/RSR-2500-300x300.jpg"
   - slug: "iking-shear-connector"
-    title: "Iking Shear Connector"
+    title: "IKING SHEAR CONNECTOR"
     image: "/wp-content/uploads/2020/10/Shear-Stud-connector-ceramic-ferrule-IKING-300x300.jpg"
 ---

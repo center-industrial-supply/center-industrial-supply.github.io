@@ -1,5 +1,5 @@
 ---
-title: "Accutig 300P"
+title: "ACCUTIG 300P"
 slug: "accutig-300p"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG Thyristor Control AC/DC Pulsed TIG Welding Machine ACCUTIG 300P/ 500P"

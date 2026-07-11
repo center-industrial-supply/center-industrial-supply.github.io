@@ -6,6 +6,6 @@ description: "Fire blankets are necessary for any workplace to prevent fire acci
 parent: "ppe-and-accessories"
 products:
   - slug: "new-fire-fire-blanket"
-    title: "New Fire Fire Blanket"
+    title: "Fire Blanket"
     image: "/wp-content/uploads/2023/06/Newfire-Fire-Blanket.png"
 ---

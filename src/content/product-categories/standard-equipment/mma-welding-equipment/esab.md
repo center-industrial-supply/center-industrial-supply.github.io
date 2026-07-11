@@ -8,8 +8,8 @@ products:
     title: "Buddy Arc 145"
     image: "/wp-content/uploads/2020/10/Buddy-Arc-145-300x300.jpg"
   - slug: "rogue-150i-180i-200i"
-    title: "Rogue 150I 180I 200I"
+    title: "ESAB Rogue ES 200i Pro"
     image: "/wp-content/uploads/2020/10/Rogue-150i_180i_200i-300x300.jpg"
   - slug: "renegade-es-300i"
-    title: "Renegade Es 300I"
+    title: "Renegade ES 300i"
 ---
