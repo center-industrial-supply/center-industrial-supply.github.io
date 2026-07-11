@@ -1,5 +1,5 @@
 ---
-title: "Aristo Mig 4004i Pulse"
+title: "ARISTO MIG 4004i Pulse"
 slug: "aristo-mig-4004i-pulse"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The Aristo Mig 4004i Pulse is designed for high-productivity and high-quality MIG welding with particular focus on aluminum and stainless steel applications."

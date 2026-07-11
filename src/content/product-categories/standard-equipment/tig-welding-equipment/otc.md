@@ -5,7 +5,7 @@ layout: category
 parent: "standard-equipment/tig-welding-equipment"
 products:
   - slug: "accutig-300p"
-    title: "Accutig 300P"
+    title: "ACCUTIG 300P"
     image: "/wp-content/uploads/2020/10/ACCUTIG-300P-300x300.jpg"
   - slug: "welbee-a350p"
     title: "Welbee A350P"

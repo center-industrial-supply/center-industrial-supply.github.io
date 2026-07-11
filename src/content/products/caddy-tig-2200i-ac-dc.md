@@ -1,5 +1,5 @@
 ---
-title: "Caddy Tig 2200i AC/DC"
+title: "CADDY TIG 2200i AC/DC"
 slug: "caddy-tig-2200i-ac-dc"
 layout: product
 description: "DOWNLOAD PRODUCT CATALOG The Caddy™ is already a classic power source in the mobile welding equipment field."
