@@ -34,7 +34,10 @@ SOURCES: dict[str, tuple[str, str]] = {
         "https://usimg.bjyyb.net/sites/62500/62761/20210619110125174.png",
         "aotai.png",
     ),
-    "kjellberg": ("https://www.kjellberg.com/LOGOKJELLBERG.jpg", "kjellberg.jpg"),
+    "kjellberg": (
+        "https://www.kjellberg.de/files/mate/img/logo.png",
+        "kjellberg.png",
+    ),
     "mosa": (
         "https://www.mosa.com/packages/mosa_site/themes/mosa_theme/e04/shared_assets/img/logo.svg",
         "mosa.svg",
