@@ -108,6 +108,30 @@ def normalize_raster(src: Path, dest: Path, max_width: int = 640) -> None:
     img.save(dest, optimize=True)
 
 
+def recolor_exact_logo_for_light_bg(src: Path, dest: Path) -> None:
+    """Exact's official asset is white/yellow for dark backgrounds; recolor for CISC cards."""
+    import numpy as np
+    from PIL import Image
+
+    img = Image.open(src).convert("RGBA")
+    arr = np.array(img, dtype=np.float32)
+    alpha = arr[:, :, 3]
+    visible = alpha > 128
+    r, g, b = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+    is_yellow = visible & (r > 200) & (g > 150) & (b < 100)
+    is_white = visible & (r > 240) & (g > 240) & (b > 240)
+    is_light = visible & ~is_yellow & (r > 200) & (g > 200)
+
+    arr[is_white | is_light, 0] = 2
+    arr[is_white | is_light, 1] = 43
+    arr[is_white | is_light, 2] = 51
+    arr[is_yellow, 0] = 255
+    arr[is_yellow, 1] = 202
+    arr[is_yellow, 2] = 0
+
+    Image.fromarray(arr.astype(np.uint8)).save(dest, optimize=True)
+
+
 def main() -> None:
     try:
         from PIL import Image  # noqa: F401
@@ -130,7 +154,12 @@ def main() -> None:
 
         out = OUT / filename
         if filename.endswith((".png", ".jpg", ".jpeg", ".gif")):
-            normalize_raster(raw, out)
+            if slug == "exact":
+                normalized = TMP / "exact-normalized.png"
+                normalize_raster(raw, normalized)
+                recolor_exact_logo_for_light_bg(normalized, out)
+            else:
+                normalize_raster(raw, out)
         else:
             shutil.copy2(raw, out)
 
