@@ -59,7 +59,7 @@ export const brands: Brand[] = [
   {
     name: "Kjellberg",
     slug: "kjellberg",
-    logo: "/images/brands/kjellberg.png",
+    logo: "/images/brands/kjellberg.svg",
     tagline: "German plasma and oxy-fuel cutting expertise",
     description:
       "Kjellberg has engineered plasma and gas-cutting technology for industrial plate processing since the early twentieth century. Their HiFocus and Smart Plasma systems are trusted on shipyards and steel service centers where cut edge quality and machine uptime matter most. CISC offers Kjellberg cutting solutions for operations that process medium to heavy plate on a daily basis.",

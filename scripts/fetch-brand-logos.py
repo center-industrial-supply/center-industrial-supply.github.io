@@ -35,8 +35,8 @@ SOURCES: dict[str, tuple[str, str]] = {
         "aotai.png",
     ),
     "kjellberg": (
-        "https://www.kjellberg.de/files/mate/img/logo.png",
-        "kjellberg.png",
+        "https://commons.wikimedia.org/w/index.php?title=Special:FilePath/Kjellberg-Finsterwalde-Logo.svg",
+        "kjellberg.svg",
     ),
     "mosa": (
         "https://www.mosa.com/packages/mosa_site/themes/mosa_theme/e04/shared_assets/img/logo.svg",
@@ -66,6 +66,17 @@ def curl(url: str, dest: Path, referer: str | None = None) -> None:
         cmd.extend(["-H", f"Referer: {referer}"])
     cmd.extend(["-o", str(dest), url])
     subprocess.run(cmd, check=True)
+
+
+def normalize_kjellberg_logo(src: Path, dest: Path) -> None:
+    """Use the positive (dark-on-light) color variant of the official logo.
+
+    The manufacturer SVG uses white letter interiors for dark/yellow backgrounds.
+    CISC brand cards sit on white, so swap that fill to the brand anthracite.
+    """
+    text = src.read_text(encoding="utf-8", errors="replace")
+    text = text.replace(".fil1 {fill:white}", ".fil1 {fill:#1E1C1F}")
+    dest.write_text(text, encoding="utf-8")
 
 
 def extract_otc_logo(src: Path, dest: Path) -> None:
@@ -126,6 +137,11 @@ def main() -> None:
         if slug == "otc":
             out = OUT / "otc.svg"
             extract_otc_logo(raw, out)
+            continue
+
+        if slug == "kjellberg":
+            out = OUT / "kjellberg.svg"
+            normalize_kjellberg_logo(raw, out)
             continue
 
         out = OUT / filename
