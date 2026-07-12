@@ -43,7 +43,7 @@ export const brands: Brand[] = [
   {
     name: "AMG",
     slug: "amg",
-    logo: "/images/brands/amg.svg",
+    logo: "/images/brands/amg.png",
     tagline: "Heavy-duty plate processing machinery",
     description:
       "AMG builds large-format equipment for plate cutting, beveling, and drilling used in structural steel and pressure-vessel fabrication. Their machines are engineered for high throughput on thick plate and long production runs. CISC connects Philippine heavy-industry customers with AMG solutions for automated plate preparation and CNC profiling workflows.",
@@ -59,7 +59,7 @@ export const brands: Brand[] = [
   {
     name: "Kjellberg",
     slug: "kjellberg",
-    logo: "/images/brands/kjellberg.jpg",
+    logo: "/images/brands/kjellberg.png",
     tagline: "German plasma and oxy-fuel cutting expertise",
     description:
       "Kjellberg has engineered plasma and gas-cutting technology for industrial plate processing since the early twentieth century. Their HiFocus and Smart Plasma systems are trusted on shipyards and steel service centers where cut edge quality and machine uptime matter most. CISC offers Kjellberg cutting solutions for operations that process medium to heavy plate on a daily basis.",
