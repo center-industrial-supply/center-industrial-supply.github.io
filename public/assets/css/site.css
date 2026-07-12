@@ -236,9 +236,24 @@ h1, h2, h3, h4 {
 .cisc-hero__bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(105deg, rgba(2, 43, 51, 0.92) 0%, rgba(2, 43, 51, 0.75) 45%, rgba(4, 110, 140, 0.55) 100%),
-    url("/images/hero/hero-welder-sparks.png") center/cover no-repeat;
+  background-image: url("/images/hero/hero-welder-sparks.png");
+  background-size: cover;
+  background-position: 72% 38%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.cisc-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(2, 43, 51, 0.94) 0%,
+    rgba(2, 43, 51, 0.82) 42%,
+    rgba(2, 43, 51, 0.45) 68%,
+    rgba(4, 110, 140, 0.35) 100%
+  );
 }
 
 .cisc-hero__grid {
@@ -1152,6 +1167,11 @@ h1, h2, h3, h4 {
 
   .cisc-hero {
     min-height: 440px;
+  }
+
+  .cisc-hero__bg {
+    background-attachment: scroll;
+    background-position: 68% 28%;
   }
 
   .cisc-topbar__contact {
