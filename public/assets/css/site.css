@@ -238,7 +238,7 @@ h1, h2, h3, h4 {
   inset: 0;
   background-image: url("/images/hero/hero-welder-sparks.png");
   background-size: cover;
-  background-position: 72% 38%;
+  background-position: right 18% top 34%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -1166,12 +1166,14 @@ h1, h2, h3, h4 {
   }
 
   .cisc-hero {
-    min-height: 440px;
+    min-height: 540px;
   }
 
   .cisc-hero__bg {
     background-attachment: scroll;
-    background-position: 68% 28%;
+    background-image: url("/images/hero/hero-welder-sparks-mobile.png");
+    background-position: right 10% top 30%;
+    background-size: cover;
   }
 
   .cisc-topbar__contact {
