@@ -238,7 +238,7 @@ h1, h2, h3, h4 {
   inset: 0;
   background:
     linear-gradient(105deg, rgba(2, 43, 51, 0.92) 0%, rgba(2, 43, 51, 0.75) 45%, rgba(4, 110, 140, 0.55) 100%),
-    url("/wp-content/uploads/2020/10/secondary-guy-industrial.jpg") center/cover no-repeat;
+    url("/images/hero/hero-welder-sparks.png") center/cover no-repeat;
 }
 
 .cisc-hero__grid {
