@@ -236,9 +236,24 @@ h1, h2, h3, h4 {
 .cisc-hero__bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(105deg, rgba(2, 43, 51, 0.92) 0%, rgba(2, 43, 51, 0.75) 45%, rgba(4, 110, 140, 0.55) 100%),
-    url("/wp-content/uploads/2020/10/secondary-guy-industrial.jpg") center/cover no-repeat;
+  background-image: url("/images/hero/hero-welder-sparks.png");
+  background-size: cover;
+  background-position: right 18% top 34%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.cisc-hero__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(2, 43, 51, 0.94) 0%,
+    rgba(2, 43, 51, 0.82) 42%,
+    rgba(2, 43, 51, 0.45) 68%,
+    rgba(4, 110, 140, 0.35) 100%
+  );
 }
 
 .cisc-hero__grid {
@@ -1151,7 +1166,14 @@ h1, h2, h3, h4 {
   }
 
   .cisc-hero {
-    min-height: 440px;
+    min-height: 540px;
+  }
+
+  .cisc-hero__bg {
+    background-attachment: scroll;
+    background-image: url("/images/hero/hero-welder-sparks-mobile.png");
+    background-position: right 10% top 30%;
+    background-size: cover;
   }
 
   .cisc-topbar__contact {
