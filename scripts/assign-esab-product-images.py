@@ -271,7 +271,7 @@ def extract_filtair_crop(model: str) -> bytes | None:
     img = Image.open(io.BytesIO(pix.tobytes("png")))
     w, h = img.size
     boxes = {
-        "8010": (int(w * 0.05), int(h * 0.18), int(w * 0.42), int(h * 0.36)),
+        "8010": (int(w * 0.50), int(h * 0.18), int(w * 0.72), int(h * 0.36)),
         "8020cv": (int(w * 0.52), int(h * 0.18), int(w * 0.92), int(h * 0.36)),
         "8030v": (int(w * 0.52), int(h * 0.42), int(w * 0.92), int(h * 0.58)),
     }
