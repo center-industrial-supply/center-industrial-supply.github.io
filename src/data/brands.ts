@@ -83,7 +83,7 @@ export const brands: Brand[] = [
   {
     name: "Weldflame",
     slug: "weldflame",
-    logo: "",
+    logo: "/images/brands/weldflame.jpg",
     tagline: "Gas cutting and beveling tools that travel well",
     description:
       "Weldflame produces portable gas cutting machines, pipe bevelers, and magnetic track cutters used on pipelines, tanks, and structural steel in the field. Their equipment is valued for simple setup and consistent travel speed on curved and flat workpieces alike. CISC distributes Weldflame cutting and beveling tools to fitters and maintenance teams working on-site across the archipelago.",
