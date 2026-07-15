@@ -2,6 +2,7 @@
 title: "Stud Welding Equipment"
 slug: "stud-welding-equipment"
 layout: category
+description: "Arc and capacitor-discharge stud welders, shear connectors, and accessories for fastening studs to metal."
 image: "/images/categories/stud-welding-equipment.jpg"
 products:
   - slug: "shear-stud-welder-st2500"
