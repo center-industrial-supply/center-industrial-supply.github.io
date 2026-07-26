@@ -56,6 +56,11 @@ SOURCES: dict[str, tuple[str, str]] = {
         "https://ossis.industrystock.com/company/logo/be117f6a2e3200757d0d3e664fe998aa.jpg",
         "wilson.jpg",
     ),
+    # Legacy CISC asset; weldflame.com has SSL issues in automated fetch environments.
+    "weldflame": (
+        "https://web.archive.org/web/20231204034522im_/https://i0.wp.com/centerindustrial.com/wp-content/uploads/2020/10/company-logo-weldflame.jpg?fit=309%2C108&ssl=1",
+        "weldflame.jpg",
+    ),
 }
 
 
