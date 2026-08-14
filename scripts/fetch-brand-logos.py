@@ -18,10 +18,12 @@ TMP = ROOT / ".cache" / "brand-logos"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0"
 
 # slug -> (url, output filename)
+# CISC Drive logos (CENTER-9) are stored in-repo after a one-time import:
+#   ESAB.svg.png, OTCAsia(WHITE).bmp, JFY-LOGO-FULL.jpg, WeldmaxLogo_Light-Tagline.jpg,
+#   Norton endorsement PDF, HR Laser Logo.png, Max Photonics.png
+# Public manufacturer URLs below cover the remaining brands.
 SOURCES: dict[str, tuple[str, str]] = {
-    "esab": ("https://cdn.worldvectorlogo.com/logos/esab.svg", "esab.svg"),
     "gys": ("https://www.gys.fr/img/common/Top/Group.svg", "gys.svg"),
-    "otc": ("https://www.otc-daihen.com/assets/template/icons.svg?1713965342", "otc-icons.svg"),
     "hypertherm": (
         "https://www.hypertherm.com/globalassets/ha/logo_ht-technology-400.png",
         "hypertherm.png",
@@ -43,7 +45,6 @@ SOURCES: dict[str, tuple[str, str]] = {
         "mosa.svg",
     ),
     "shindaiwa": ("https://www.shindaiwa.com/_nuxt/img/c8d9173.svg", "shindaiwa.svg"),
-    "hgstar": ("https://style.hgstarlaser.com/logo.gif", "hgstar.png"),
     "iking": (
         "https://www.shearstud.net/Uploads/logo/en-IKING-stud-welding-solution-163347.jpg",
         "iking.jpg",
@@ -56,6 +57,12 @@ SOURCES: dict[str, tuple[str, str]] = {
         "https://ossis.industrystock.com/company/logo/be117f6a2e3200757d0d3e664fe998aa.jpg",
         "wilson.jpg",
     ),
+    "dwt": ("https://www.dwt-pipetools.com/userfiles/image/layout/logo.png", "dwt.png"),
+    "axxair": (
+        "https://www.axxair.com/wp-content/uploads/sites/23/2024/10/AXXAIR-logo.svg",
+        "axxair.svg",
+    ),
+    "taiwan-plasma": ("https://www.plasma.com.tw/images/logo.png", "taiwan-plasma.png"),
 }
 
 
@@ -79,30 +86,6 @@ def normalize_kjellberg_logo(src: Path, dest: Path) -> None:
     dest.write_text(text, encoding="utf-8")
 
 
-def extract_otc_logo(src: Path, dest: Path) -> None:
-    import re
-
-    text = src.read_text(encoding="utf-8", errors="replace")
-    tag_match = re.search(r'<symbol[^>]*id="otc-logo"[^>]*>', text)
-    content_match = re.search(
-        r'<symbol[^>]*id="otc-logo"[^>]*>(.*?)</symbol>',
-        text,
-        re.S,
-    )
-    viewbox = "0 0 363.3 159.5"
-    content = ""
-    if tag_match:
-        viewbox_match = re.search(r'viewBox="([^"]*)"', tag_match.group(0))
-        if viewbox_match:
-            viewbox = viewbox_match.group(1)
-    if content_match:
-        content = content_match.group(1)
-    dest.write_text(
-        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{viewbox}">{content}</svg>\n',
-        encoding="utf-8",
-    )
-
-
 def normalize_raster(src: Path, dest: Path, max_width: int = 640) -> None:
     from PIL import Image
 
@@ -117,6 +100,34 @@ def normalize_raster(src: Path, dest: Path, max_width: int = 640) -> None:
         bg.paste(img, mask=img.split()[-1])
         img = bg
     img.save(dest, optimize=True)
+
+
+def invert_white_on_black(src: Path, dest: Path) -> None:
+    """Turn a white-on-black header mark into a dark-on-light logo for CISC cards."""
+    import numpy as np
+    from PIL import Image
+
+    img = Image.open(src).convert("RGBA")
+    arr = np.array(img, dtype=np.float32)
+    r, g, b = arr[:, :, 0], arr[:, :, 1], arr[:, :, 2]
+    is_black = (r < 45) & (g < 45) & (b < 45)
+    is_white = (r > 220) & (g > 220) & (b > 220)
+    arr[is_white, 0] = 20
+    arr[is_white, 1] = 20
+    arr[is_white, 2] = 20
+    arr[is_black, 3] = 0
+    Image.fromarray(arr.astype(np.uint8)).save(dest, optimize=True)
+
+
+def extract_embedded_png(src: Path, dest: Path) -> None:
+    import base64
+    import re
+
+    text = src.read_text(encoding="utf-8", errors="replace")
+    match = re.search(r"xlink:href=\"data:image/png;base64,([^\"]+)\"", text)
+    if not match:
+        raise RuntimeError(f"No embedded PNG found in {src}")
+    dest.write_bytes(base64.b64decode(match.group(1)))
 
 
 def recolor_exact_logo_for_light_bg(src: Path, dest: Path) -> None:
@@ -158,14 +169,15 @@ def main() -> None:
         referer = "https://www.asiacnc.com.tw/" if slug == "amg" else None
         curl(url, raw, referer=referer)
 
-        if slug == "otc":
-            out = OUT / "otc.svg"
-            extract_otc_logo(raw, out)
-            continue
-
         if slug == "kjellberg":
             out = OUT / "kjellberg.svg"
             normalize_kjellberg_logo(raw, out)
+            continue
+
+        if slug == "axxair":
+            embedded = TMP / "axxair-embedded.png"
+            extract_embedded_png(raw, embedded)
+            invert_white_on_black(embedded, OUT / "axxair.png")
             continue
 
         out = OUT / filename

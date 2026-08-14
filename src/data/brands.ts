@@ -11,7 +11,7 @@ export const brands: Brand[] = [
   {
     name: "ESAB",
     slug: "esab",
-    logo: "/images/brands/esab.svg",
+    logo: "/images/brands/esab.png",
     tagline: "Global welding and cutting leader",
     description:
       "ESAB brings together a century of welding innovation under one name. From portable inverter machines to automated fabrication systems, their equipment is built for shops that demand repeatable quality. CISC supplies ESAB power sources, consumables, and PPE for shipbuilding, heavy fabrication, and maintenance teams across the Philippines.",
@@ -27,7 +27,7 @@ export const brands: Brand[] = [
   {
     name: "OTC",
     slug: "otc",
-    logo: "/images/brands/otc.svg",
+    logo: "/images/brands/otc.png",
     tagline: "Robotics and arc welding precision",
     description:
       "OTC DAIHEN specializes in arc welding automation and high-precision robotic cells used in automotive and appliance manufacturing worldwide. Their controllers integrate cleanly with production lines and support complex multi-pass routines. CISC represents OTC robotic systems and welding power sources for customers exploring semi-automated or fully robotic welding solutions.",
@@ -97,14 +97,6 @@ export const brands: Brand[] = [
       "Wilson manufactures regulators, flowmeters, torch handles, and gas apparatus components that keep oxy-fuel and shielding-gas systems running safely. Their products meet recognized industrial standards and are widely used in combination with cutting and welding setups. CISC carries Wilson gas equipment and torch parts for shops maintaining legacy oxy-fuel rigs and modern MIG/TIG installations.",
   },
   {
-    name: "Hgstar",
-    slug: "hgstar",
-    logo: "/images/brands/hgstar.png",
-    tagline: "Specialized welding and cutting consumables",
-    description:
-      "Hgstar supplies welding and cutting consumables tailored for specific processes and base materials used in fabrication and repair work. From contact tips and nozzles to specialty accessories, their catalog supports shops that want consistent spare-part availability alongside their primary equipment. CISC offers Hgstar consumables as part of a complete supply solution for ongoing production needs.",
-  },
-  {
     name: "IKING",
     slug: "iking",
     logo: "/images/brands/iking.jpg",
@@ -119,6 +111,70 @@ export const brands: Brand[] = [
     tagline: "Pipe cutting and preparation on the job",
     description:
       "Exact manufactures portable pipe saws and preparation tools that give fitters square, burr-free cuts on stainless, carbon steel, and alloy pipe in tight spaces. Battery-powered and pneumatic options reduce setup time compared with traditional abrasive methods. CISC provides Exact pipe cutting tools to mechanical contractors and process piping teams working in refineries, power plants, and commercial builds.",
+  },
+  {
+    name: "JFY",
+    slug: "jfy",
+    logo: "/images/brands/jfy.png",
+    tagline: "Sheet metal machines from the TRUMPF family",
+    description:
+      "JFY builds press brakes, turret punches, shears, and fiber-laser cutting systems for production shops that form and cut sheet metal every day. As a member of the TRUMPF Group, their machines emphasize repeatable accuracy and straightforward operation on carbon steel, stainless, and aluminum. CISC supplies JFY equipment to Philippine fabricators expanding from job-shop work into higher-volume sheet processing.",
+  },
+  {
+    name: "Weldmax",
+    slug: "weldmax",
+    logo: "/images/brands/weldmax.png",
+    tagline: "Filler metals that keep production moving",
+    description:
+      "Weldmax supplies welding wire and related consumables used on everyday MIG and MAG work in fabrication and repair shops. The line is chosen for consistent feed, clean deposits, and practical packaging for busy stores and site crews. CISC stocks Weldmax consumables so customers can match filler metal to the machines already on their floor.",
+  },
+  {
+    name: "DWT",
+    slug: "dwt",
+    logo: "/images/brands/dwt.png",
+    tagline: "German pipe cutting and beveling on site",
+    description:
+      "DWT manufactures portable ID-mount and OD-mount pipe bevelers plus cold-cutting clamshells for weld-edge preparation in the field. The machines are built in Bottrop for heavy-wall pipe on pipelines, boilers, and shipyard work where heat-affected zones must stay small. CISC represents DWT pipe tools for Philippine contractors who prepare joints on location rather than in a machine shop.",
+  },
+  {
+    name: "Norton",
+    slug: "norton",
+    logo: "/images/brands/norton.png",
+    tagline: "Abrasives for weld prep and finishing",
+    description:
+      "Norton, a Saint-Gobain abrasives brand, makes cutting discs, grinding wheels, and finishing products used to dress welds and prepare metal edges. Their bonded and coated abrasives are specified across fabrication, maintenance, and shipyard work. CISC carries Norton abrasives so welders can cut, grind, and blend with materials that match the rest of the CISC equipment lineup.",
+  },
+  {
+    name: "HR Laser",
+    slug: "hr-laser",
+    logo: "/images/brands/hr-laser.png",
+    tagline: "Handheld laser welding for production and repair",
+    description:
+      "HR Laser builds fiber-laser welding systems for shops that want faster, cleaner joins on thin to medium sheet without the heat input of conventional MIG. Handheld and workstation formats suit both production cells and mobile repair. CISC introduces HR Laser equipment to Philippine fabricators evaluating laser welding alongside their existing arc processes.",
+  },
+  {
+    name: "Taiwan Plasma",
+    slug: "taiwan-plasma",
+    logo: "/images/brands/taiwan-plasma.png",
+    tagline: "Industrial plasma cutting from Taiwan",
+    description:
+      "Taiwan Plasma Corp. designs portable and CNC plasma cutting systems, including the Pla-Cut range used for plate and structural work. Their machines emphasize stable cutting current and practical torch design for daily shop use. CISC supplies Taiwan Plasma cutters to contractors and fabricators who need dependable air-plasma performance without stepping up to a full CNC cell.",
+  },
+  {
+    name: "Axxair",
+    slug: "axxair",
+    logo: "/images/brands/axxair.png",
+    tagline: "Orbital cutting, beveling, and welding",
+    description:
+      "Axxair designs orbital machines that cut, bevel, square, and TIG-weld tube and pipe to a consistent geometry. The equipment is widely used in process piping, food-grade stainless, and heat-exchanger work where joint fit-up has to be repeatable. CISC provides Axxair orbital systems to Philippine mechanical contractors and fabricators building sanitary and high-spec tubular assemblies.",
+  },
+  {
+    name: "Max Photonics",
+    slug: "max-photonics",
+    logo: "/images/brands/max-photonics.png",
+    tagline: "Fiber laser sources for welding and cutting",
+    description:
+      "Max Photonics manufactures fiber-laser sources used in handheld welders and CNC cutting systems. Their modules are specified where shops want compact laser power with straightforward integration into production equipment. CISC offers Max Photonics laser technology as part of a broader welding and cutting lineup for customers moving into laser processes.",
   },
 ];
 
@@ -135,9 +191,19 @@ const brandAliases: Record<string, string> = {
   shindaiwa: "shindaiwa",
   weldflame: "weldflame",
   wilson: "wilson",
-  hgstar: "hgstar",
   iking: "iking",
   exact: "exact",
+  jfy: "jfy",
+  weldmax: "weldmax",
+  dwt: "dwt",
+  norton: "norton",
+  "hr laser": "hr-laser",
+  hrlaser: "hr-laser",
+  "taiwan plasma": "taiwan-plasma",
+  taiwanplasma: "taiwan-plasma",
+  axxair: "axxair",
+  "max photonics": "max-photonics",
+  maxphotonics: "max-photonics",
 };
 
 export function getBrandBySlug(slug: string): Brand | undefined {

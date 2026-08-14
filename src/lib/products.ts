@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import { brandNameToSlug } from "../data/brands";
 
 export interface ProductSummary {
   name: string;
@@ -48,10 +49,7 @@ export async function getProductsByBrand(brandSlug: string): Promise<ProductSumm
   const products = await getCollection("products");
 
   return products
-    .filter((product) => {
-      const productBrand = product.data.brand?.trim().toLowerCase() ?? "";
-      return productBrand === brandSlug;
-    })
+    .filter((product) => brandNameToSlug(product.data.brand ?? "") === brandSlug)
     .map(toProductSummary)
     .sort((a, b) => a.name.localeCompare(b.name));
 }
