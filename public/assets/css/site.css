@@ -955,6 +955,18 @@ h1, h2, h3, h4 {
   justify-content: center;
 }
 
+.cisc-empty .cisc-btn--outline {
+  color: var(--cisc-teal);
+  border-color: var(--cisc-teal);
+  background: transparent;
+}
+
+.cisc-empty .cisc-btn--outline:hover {
+  background: var(--cisc-teal);
+  color: var(--cisc-white);
+  border-color: var(--cisc-teal);
+}
+
 .cisc-product-card:hover {
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
