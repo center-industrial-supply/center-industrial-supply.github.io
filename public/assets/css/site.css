@@ -775,6 +775,21 @@ h1, h2, h3, h4 {
   font-size: 1.5rem;
 }
 
+.cisc-prose h3 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.15rem;
+}
+
+.cisc-prose ul,
+.cisc-prose ol {
+  margin: 0 0 1.25rem;
+  padding-left: 1.25rem;
+}
+
+.cisc-prose li {
+  margin: 0 0 0.35rem;
+}
+
 /* Timeline */
 .cisc-timeline {
   border-left: 3px solid var(--cisc-teal);
