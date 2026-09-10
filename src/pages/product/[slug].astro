@@ -21,6 +21,7 @@ const { Content } = await render(product);
   category={product.data.category}
   images={product.data.images}
   breadcrumb={product.data.breadcrumb}
+  clearance={product.data.clearance === true}
 >
   <div slot="body" class="cisc-prose">
     <h2>Product Description</h2>

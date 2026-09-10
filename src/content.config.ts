@@ -23,6 +23,7 @@ const products = defineCollection({
     category: z.string().optional(),
     images: z.array(z.string()).optional(),
     breadcrumb: z.array(breadcrumbSchema).optional(),
+    clearance: z.boolean().optional(),
   }),
 });
 

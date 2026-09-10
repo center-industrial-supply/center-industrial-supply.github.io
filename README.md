@@ -57,6 +57,7 @@ brand: "ESAB"
 category: "standard-equipment/mma-welding-equipment/esab"
 images:
   - "/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
+# clearance: true   # optional; shows the product on /clearance/
 ---
 ```
 
@@ -82,6 +83,16 @@ New images belong under `public/images/` (see [agents.md](agents.md)). Legacy `/
 - **Products & categories**: Edit markdown files in `src/content/`. URLs are preserved (`/product/{slug}/`, `/product-category/{nested-path}/`).
 - **Site pages** (home, about, contact, support): Edit Astro files in `src/pages/` with frontmatter blocks.
 - **Navigation data**: `src/data/categories.ts`, `src/data/brands.ts`
+
+### Clearance items
+
+To list a product on the Clearance page (`/clearance/`), add `clearance: true` to that product's markdown frontmatter in `src/content/products/`:
+
+```yaml
+clearance: true
+```
+
+Remove the field or set `clearance: false` to take it off the page. The Clearance page only shows categories that have at least one tagged product. Leave products untagged until staff name the SKUs.
 
 To re-migrate from archived HTML (if re-downloaded from Wayback):
 
