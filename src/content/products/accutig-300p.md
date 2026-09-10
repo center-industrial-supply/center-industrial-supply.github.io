@@ -2,11 +2,32 @@
 title: "ACCUTIG 300P"
 slug: "accutig-300p"
 layout: product
-description: "DOWNLOAD PRODUCT CATALOG Thyristor Control AC/DC Pulsed TIG Welding Machine ACCUTIG 300P/ 500P"
+description: "OTC Daihen thyristor-controlled AC/DC pulsed TIG welder. 300A rated output, 100% duty cycle, seven welding modes for aluminum and mixed-metal work."
 brand: "OTC"
 images:
   - "/images/products/accutig-300p/OTC-Accutig-300P.jpg"
 category: "standard-equipment/tig-welding-equipment/otc"
 ---
 
-<p><strong>ACCUTIG 300P</strong><p>Thyristor Control AC/DC Pulsed TIG Welding Machine ACCUTIG 300P/ 500P<p>Highest-quality AC/DC Pulsed TIG welding machine achieve high quality welding of aluminum<p>by varied AC TIG current waveforms and pulse functions.<p>7 welding modes<p>* DC PULSED TIC<p>* DC Stick<p>* Rectangular Wave AC Pulsed TIG<p>* Rectangular Wave AC Stick<p>* DC TIG<p>* TIG Arc Spot<p>* Rectangular Wave AC TIG<p>Welding power supply AEP-300<p>Rated input Single phase 230V<p>Rated output 300A<p>Output adjustment range AC～350A / DC～350A<p>Rated utilization rate 100%<p>Mass (dimensions) 176kg(460x663x859mm)<p>Welding torches AW-18<p>Cable Hose BAB-3501.
+The OTC ACCUTIG 300P (power supply AEP-300) is a thyristor-controlled AC/DC pulsed TIG machine for high-quality aluminum and mixed-metal welding. Variable AC TIG waveforms and pulse functions give a stable arc, effective oxide cleaning, and consistent penetration.
+
+## Seven welding modes
+
+- Rectangular Wave AC TIG
+- Rectangular Wave AC Pulsed TIG
+- Rectangular Wave AC Stick
+- DC TIG
+- DC Pulsed TIG
+- DC Stick
+- TIG Arc Spot
+
+## Specifications
+
+- Welding power supply: AEP-300
+- Rated input: Single phase 230V
+- Rated output: 300A
+- Output adjustment range: AC 350A / DC 350A
+- Rated utilization: 100%
+- Mass (dimensions): 176 kg (460 × 663 × 859 mm)
+- Welding torch: AW-18
+- Cable hose: BAB-3501
