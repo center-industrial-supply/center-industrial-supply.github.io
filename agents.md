@@ -84,6 +84,7 @@ brand: "ESAB"
 category: "standard-equipment/mma-welding-equipment/esab"
 images:
   - "/images/products/buddy-arc-145/ESAB-Buddy-Arc-145.jpg"
+# clearance: true   # optional; include the product on /clearance/
 ---
 ```
 

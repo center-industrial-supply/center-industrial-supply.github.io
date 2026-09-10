@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import PageHeader from "../components/PageHeader.astro";
+import ProductCard from "../components/ProductCard.astro";
 import { getProductImageMap, getProductTitleMap } from "../lib/products";
+import { getClearanceSlugSet } from "../lib/clearance";
 
 interface CategoryItem {
   slug: string;
@@ -26,6 +28,7 @@ interface Props {
 const { title, slug, description, subcategories = [], products = [], breadcrumb = [] } = Astro.props;
 const productImages = await getProductImageMap();
 const productTitles = await getProductTitleMap();
+const clearanceSlugs = await getClearanceSlugSet();
 
 const pageDescription =
   description ?? `Browse ${title} from Center Industrial Supply Corporation.`;
@@ -81,20 +84,12 @@ const categoryBase = `/product-category/${slug}`;
               {products.map((item) => {
                 const productTitle = productTitles.get(item.slug) ?? item.title;
                 return (
-                  <a class="cisc-product-card" href={`/product/${item.slug}/`}>
-                    <div class="cisc-product-card__img">
-                      <img
-                        src={productImages.get(item.slug) ?? item.image ?? "/wp-content/uploads/woocommerce-placeholder.png"}
-                        alt={productTitle}
-                        loading="lazy"
-                        width="300"
-                        height="300"
-                      />
-                    </div>
-                    <div class="cisc-product-card__body">
-                      <h3>{productTitle}</h3>
-                    </div>
-                  </a>
+                  <ProductCard
+                    href={`/product/${item.slug}/`}
+                    name={productTitle}
+                    image={productImages.get(item.slug) ?? item.image ?? "/wp-content/uploads/woocommerce-placeholder.png"}
+                    clearance={clearanceSlugs.has(item.slug)}
+                  />
                 );
               })}
             </div>

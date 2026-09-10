@@ -5,6 +5,7 @@ export interface ProductSummary {
   href: string;
   image: string;
   brand: string;
+  clearance: boolean;
 }
 
 const PLACEHOLDER_IMAGE = "/wp-content/uploads/woocommerce-placeholder.png";
@@ -27,14 +28,21 @@ export async function getProductTitleMap(): Promise<Map<string, string>> {
   return new Map(products.map((product) => [product.data.slug, product.data.title]));
 }
 
-function toProductSummary(product: {
-  data: { title: string; slug: string; images?: string[]; brand?: string };
+export function isClearanceProduct(product: {
+  data: { clearance?: boolean };
+}): boolean {
+  return product.data.clearance === true;
+}
+
+export function toProductSummary(product: {
+  data: { title: string; slug: string; images?: string[]; brand?: string; clearance?: boolean };
 }): ProductSummary {
   return {
     name: product.data.title,
     href: `/product/${product.data.slug}/`,
     image: primaryProductImage(product.data.images).replace(/^\//, ""),
     brand: product.data.brand ?? "",
+    clearance: isClearanceProduct(product),
   };
 }
 

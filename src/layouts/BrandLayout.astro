@@ -1,5 +1,6 @@
 ---
 import PageLayout from "./PageLayout.astro";
+import ProductCard from "../components/ProductCard.astro";
 import type { Brand } from "../data/brands";
 import type { ProductSummary } from "../lib/products";
 
@@ -44,20 +45,12 @@ const { brand, products } = Astro.props;
         products.length > 0 ? (
           <div class="cisc-product-grid">
             {products.map((product) => (
-              <a class="cisc-product-card" href={product.href}>
-                <div class="cisc-product-card__img">
-                  <img
-                    src={`/${product.image}`}
-                    alt={product.name}
-                    loading="lazy"
-                    width="300"
-                    height="300"
-                  />
-                </div>
-                <div class="cisc-product-card__body">
-                  <h3>{product.name}</h3>
-                </div>
-              </a>
+              <ProductCard
+                href={product.href}
+                name={product.name}
+                image={product.image}
+                clearance={product.clearance}
+              />
             ))}
           </div>
         ) : (

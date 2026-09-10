@@ -1,5 +1,6 @@
 ---
 import PageLayout from "../../layouts/PageLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
 import { getProducts } from "../../lib/products";
 
 const products = await getProducts();
@@ -17,21 +18,13 @@ const products = await getProducts();
       <div class="cisc-product-grid">
         {
           products.map((product) => (
-            <a class="cisc-product-card" href={product.href}>
-              <div class="cisc-product-card__img">
-                <img
-                  src={`/${product.image}`}
-                  alt={product.name}
-                  loading="lazy"
-                  width="300"
-                  height="300"
-                />
-              </div>
-              <div class="cisc-product-card__body">
-                {product.brand && <div class="cisc-product-card__brand">{product.brand}</div>}
-                <h3>{product.name}</h3>
-              </div>
-            </a>
+            <ProductCard
+              href={product.href}
+              name={product.name}
+              image={product.image}
+              brand={product.brand}
+              clearance={product.clearance}
+            />
           ))
         }
       </div>

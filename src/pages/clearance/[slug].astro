@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import {
+  getClearanceProductsInCategory,
+  getClearanceTopCategories,
+  getTopLevelCategory,
+} from "../../lib/clearance";
+
+export async function getStaticPaths() {
+  const clearanceCategories = await getClearanceTopCategories();
+  return clearanceCategories.map((category) => {
+    const slug = category.href.replace(/^\/clearance\//, "").replace(/\/$/, "");
+    return {
+      params: { slug },
+      props: { slug },
+    };
+  });
+}
+
+const { slug } = Astro.props;
+const category = getTopLevelCategory(slug);
+const products = await getClearanceProductsInCategory(slug);
+const title = category?.name ?? "Clearance";
+---
+
+<BaseLayout
+  title={`${title} Clearance — Center Industrial Supply Corporation`}
+  description={category?.description ?? `Clearance items in ${title} from Center Industrial Supply Corporation.`}
+>
+  <PageHeader
+    title={title}
+    breadcrumb={`<a href="/">Home</a> / <a href="/clearance/">Clearance</a> / ${title}`}
+    subtitle={category?.description}
+  />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      {
+        products.length > 0 ? (
+          <section class="cisc-category-section">
+            <h2 class="cisc-category-section__title">Products</h2>
+            <div class="cisc-product-grid">
+              {products.map((product) => (
+                <ProductCard
+                  href={product.href}
+                  name={product.name}
+                  image={product.image}
+                  brand={product.brand}
+                  clearance={product.clearance}
+                />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div class="cisc-empty">
+            <h2>No clearance items in this category</h2>
+            <p>
+              <a href="/clearance/">Back to Clearance</a>
+              {" · "}
+              <a href="/products/">Browse Products</a>
+            </p>
+          </div>
+        )
+      }
+    </div>
+  </main>
+</BaseLayout>

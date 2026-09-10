@@ -14,9 +14,10 @@ interface Props {
   category?: string;
   images?: string[];
   breadcrumb?: Breadcrumb[];
+  clearance?: boolean;
 }
 
-const { title, description, brand, category, images = [], breadcrumb = [] } = Astro.props;
+const { title, description, brand, category, images = [], breadcrumb = [], clearance = false } = Astro.props;
 
 const pageDescription =
   description ?? `${title} — welding and cutting equipment from Center Industrial Supply Corporation.`;
@@ -65,6 +66,11 @@ const primaryImage = images[0];
         </div>
         <div class="cisc-product-detail__summary">
           {brand && <div class="cisc-product-detail__brand">{brand}</div>}
+          {
+            clearance && (
+              <span class="cisc-badge cisc-badge--clearance cisc-badge--inline">Clearance</span>
+            )
+          }
           <h1>{title}</h1>
           {description && <p class="cisc-product-detail__lead">{description}</p>}
           <div class="cisc-product-detail__actions">

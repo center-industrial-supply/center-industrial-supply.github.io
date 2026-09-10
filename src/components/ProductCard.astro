@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string;
+  name: string;
+  image: string;
+  brand?: string;
+  clearance?: boolean;
+}
+
+const { href, name, image, brand, clearance = false } = Astro.props;
+const src = image.startsWith("/") ? image : `/${image}`;
+---
+
+<a class="cisc-product-card" href={href}>
+  <div class="cisc-product-card__img">
+    {
+      clearance && (
+        <span class="cisc-badge cisc-badge--clearance">Clearance</span>
+      )
+    }
+    <img src={src} alt={name} loading="lazy" width="300" height="300" />
+  </div>
+  <div class="cisc-product-card__body">
+    {brand && <div class="cisc-product-card__brand">{brand}</div>}
+    <h3>{name}</h3>
+  </div>
+</a>

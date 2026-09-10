@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import CategoryCards from "../../components/CategoryCards.astro";
+import { getClearanceTopCategories } from "../../lib/clearance";
+
+const clearanceCategories = await getClearanceTopCategories();
+---
+
+<BaseLayout
+  title="Clearance — Center Industrial Supply Corporation"
+  description="Clearance welding and cutting equipment from Center Industrial Supply Corporation."
+>
+  <PageHeader
+    title="Clearance"
+    breadcrumb='<a href="/">Home</a> / Clearance'
+    subtitle="Selected equipment and consumables available while stocks last."
+  />
+  <main class="cisc-section">
+    <div class="cisc-container">
+      {
+        clearanceCategories.length > 0 ? (
+          <CategoryCards categories={clearanceCategories} />
+        ) : (
+          <div class="cisc-empty">
+            <h2>No clearance items at this time</h2>
+            <p>
+              Check back soon, or browse the full catalog for current welding and cutting equipment.
+            </p>
+            <div class="cisc-empty__actions">
+              <a class="cisc-btn cisc-btn--primary" href="/products/">
+                Browse Products
+              </a>
+              <a class="cisc-btn cisc-btn--outline" href="/contact-us/">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </main>
+</BaseLayout>
