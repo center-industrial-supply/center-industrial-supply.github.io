@@ -116,10 +116,26 @@ h1, h2, h3, h4 {
   gap: 1rem;
 }
 
+.cisc-logo {
+  color: var(--cisc-navy);
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .cisc-logo img {
   height: 42px;
   width: auto;
   object-fit: contain;
+}
+
+/* White silhouette when the same wordmark sits on a dark header/hero. */
+.cisc-logo--on-dark {
+  color: var(--cisc-white);
+}
+
+.cisc-logo--on-dark img {
+  filter: brightness(0) invert(1);
 }
 
 .cisc-nav {
