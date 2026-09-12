@@ -26,6 +26,7 @@ check_glob() {
 check_glob "public/images/categories/*.jpg" "category images"
 check_glob "public/images/categories/subcategories/*.jpg" "subcategory images"
 check_glob "public/images/products/**/*.{jpg,jpeg,png}" "product images"
+check_glob "public/images/brands/*.{jpg,jpeg,png}" "brand logos"
 
 if [ "$fail" -ne 0 ]; then
   echo "One or more image files are Git LFS pointers, not binary image data."

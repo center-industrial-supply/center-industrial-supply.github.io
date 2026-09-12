@@ -15,11 +15,15 @@ Use these domains when searching for official product photography. Search with `
 | Shindaiwa | `shindaiwa.co.jp` | Engine welders; may need model number search |
 | Weldflame | `weldflame.com` | Gas apparatus, torches, regulators |
 | Wilson | `wilsonweld.com` | Gas welding/cutting accessories |
-| Hgstar | `hgstarlaser.com` | Laser cutting machines |
 | IKING | `iking.cn`, `ikingtec.com` | Laser welding/cutting equipment |
 | Exact | `exact-tools.com` | Pipe cutting tools |
 | Axxair | `axxair.com`, `axxair.fr` | Orbital cutting/beveling machines |
-| DWT | `dwt-gmbh.com` | Tube processing machinery |
+| DWT | `dwt-pipetools.com`, `dwt-gmbh.de` | Tube processing machinery |
+| JFY | `jfy.com.cn`, `trumpf.com` | Sheet metal machines (TRUMPF Group) |
+| Norton | `nortonabrasives.com` | Cutting and grinding abrasives |
+| HR Laser | `hrlaser.com` | Handheld / fiber laser welding |
+| Taiwan Plasma | `plasma.com.tw` | Portable and CNC plasma cutters |
+| Max Photonics | `maxphotonics.com` | Fiber laser sources |
 | TBI | `tbi-industries.com` | Welding torches |
 | Newfire | `newfire.com.cn` | Welding machines |
 | Hyundai | `hdwelding.co.kr` | Welding consumables/equipment |
