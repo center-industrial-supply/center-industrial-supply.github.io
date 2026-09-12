@@ -26,6 +26,9 @@ jobs:
       - name: Verify image files are not LFS pointers
         run: bash scripts/verify-not-lfs-pointers.sh
 
+      - name: Validate brand logos
+        run: python3 scripts/validate-brand-logos.py
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
