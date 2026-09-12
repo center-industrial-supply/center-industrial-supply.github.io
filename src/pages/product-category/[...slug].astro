@@ -1,16 +1,24 @@
 ---
 import { getCollection } from "astro:content";
 import CategoryLayout from "../../layouts/CategoryLayout.astro";
+import { getProductImageMap, resolveCategoryProductImages } from "../../lib/products";
 
 export async function getStaticPaths() {
-  const categories = await getCollection("product-categories");
+  const [categories, productImageMap] = await Promise.all([
+    getCollection("product-categories"),
+    getProductImageMap(),
+  ]);
+
   return categories.map((category) => ({
     params: { slug: category.data.slug },
-    props: { category },
+    props: {
+      category,
+      products: resolveCategoryProductImages(category.data.products, productImageMap),
+    },
   }));
 }
 
-const { category } = Astro.props;
+const { category, products } = Astro.props;
 ---
 
 <CategoryLayout
@@ -18,6 +26,6 @@ const { category } = Astro.props;
   slug={category.data.slug}
   description={category.data.description}
   subcategories={category.data.subcategories}
-  products={category.data.products}
+  products={products}
   breadcrumb={category.data.breadcrumb}
 />
