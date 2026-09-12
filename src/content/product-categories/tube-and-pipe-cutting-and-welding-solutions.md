@@ -2,6 +2,7 @@
 title: "Tube and Pipe Cutting & Welding Solutions"
 slug: "tube-and-pipe-cutting-and-welding-solutions"
 layout: category
+description: "Orbital cutting, bevelling, and welding systems plus pipe cold cutters and bevelers for tube and pipe fabrication."
 image: "/images/categories/tube-and-pipe-cutting-and-welding-solutions.jpg"
 subcategories:
   - slug: "exact-pipe-cutting-machines"

@@ -2,6 +2,7 @@
 title: "Engine Driven Welders"
 slug: "engine-driven-welder"
 layout: category
+description: "Portable diesel and petrol engine-driven welding power sources for field, pipeline, and construction work."
 image: "/images/categories/engine-driven-welder.jpg"
 products:
   - slug: "dgw300m-my"
