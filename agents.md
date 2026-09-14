@@ -88,6 +88,23 @@ images:
 ---
 ```
 
+## Pull request previews
+
+Every PR gets a Cloudflare Pages preview for the `cisc` project. The Cloudflare bot comments both URLs on the PR:
+
+| URL | Pattern | Use |
+|-----|---------|-----|
+| **Branch Preview URL** (preferred) | `https://<sanitized-branch>.cisc-6o4.pages.dev` | Stable PR env while the branch updates |
+| Preview URL | `https://<commit-hash>.cisc-6o4.pages.dev` | Exact commit |
+
+**Always include the Branch Preview URL** (the PR env) whenever you share a PR in Slack, the PR description, or a wrap-up. Do not share only the GitHub PR link.
+
+How to get it:
+
+1. Open or update the PR, then wait for the `Cloudflare Pages` check and the `cloudflare-workers-and-pages` comment.
+2. Read it with `gh pr view <n> --json comments` and use the **Branch Preview URL**.
+3. If the comment is not up yet, wait and retry. Do not invent or guess the hostname.
+
 ## Commands
 
 ```bash

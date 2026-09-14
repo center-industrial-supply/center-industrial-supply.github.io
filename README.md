@@ -121,3 +121,5 @@ Agent conventions (image paths, content model, skills): [agents.md](agents.md).
 ## Deployment
 
 GitHub Actions (`.github/workflows/deploy.yml`) builds with `npm run build` and deploys the `dist/` folder to GitHub Pages on every push to `main`.
+
+Pull requests also get a Cloudflare Pages preview. Prefer the **Branch Preview URL** from the Cloudflare bot comment (`https://<sanitized-branch>.cisc-6o4.pages.dev`) when sharing a PR. Agents should always include that PR env link (see [agents.md](agents.md)).
